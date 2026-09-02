@@ -59,7 +59,10 @@ try {
         $custPincode = htmlspecialchars($customer['pincode'] ?? '');
         $custState = htmlspecialchars($customer['state'] ?? '');
 
-        if (!empty($customer['email'])) {
+        if (!empty($customer['email']) && filter_var($customer['email'], FILTER_VALIDATE_EMAIL)) {
+            $mail->addAddress($customer['email'], $custName);
+            $mail->addReplyTo($customer['email'], $custName);
+        } else if (!empty($customer['email'])) {
             $mail->addReplyTo($customer['email'], $custName);
         }
 
@@ -95,7 +98,7 @@ try {
                         <h2 style='color: #800020; margin: 0; font-size: 22px;'>Nagercoil Crackers Mart</h2>
                         <p style='color: #64748b; font-size: 12px; margin: 4px 0 0 0; line-height: 1.5;'>
                             Kottar, Nagercoil, Kanyakumari Dist., Tamil Nadu — 629002<br>
-                            Phone: +91 9790454711 / +91 7092799913
+                            Phone: +91 9790454711 / +91 8248159490
                         </p>
                     </td>
                     <td align='right' valign='top'>

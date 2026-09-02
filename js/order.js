@@ -962,10 +962,11 @@
       document.getElementById('checkoutModal').classList.remove('active');
     }
 
-    function submitWhatsAppOrder() {
+    async function submitWhatsAppOrder() {
       const nameEl     = document.getElementById('custName');
       const mobileEl   = document.getElementById('custMobile');
       const whatsappEl = document.getElementById('custWhatsapp');
+      const emailEl    = document.getElementById('custEmail');
       const addressEl  = document.getElementById('custAddress');
       const cityEl     = document.getElementById('custCity');
       const pincodeEl  = document.getElementById('custPincode');
@@ -974,6 +975,7 @@
       const name     = nameEl ? nameEl.value.trim() : '';
       const mobile   = mobileEl ? mobileEl.value.trim() : '';
       const whatsapp = whatsappEl ? whatsappEl.value.trim() : '';
+      const email    = emailEl ? emailEl.value.trim() : '';
       const address  = addressEl ? addressEl.value.trim() : '';
       const city     = cityEl ? cityEl.value.trim() : '';
       const pincode  = pincodeEl ? pincodeEl.value.trim() : '';
@@ -1067,9 +1069,20 @@
       if (!isValid) {
         if (firstInvalidEl) {
           firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              firstInvalidEl.focus();
+          firstInvalidEl.focus();
         }
         return;
+      }
+
+      // Show submitting state on button
+      const submitBtn = document.querySelector('.btn-submit-order');
+      let originalBtnHtml = '';
+      if (submitBtn) {
+        originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        submitBtn.style.cursor = 'wait';
+        submitBtn.innerHTML = 'Sending Email & Order... ⏳';
       }
 
       const { offerTotal, packing, grand } = calcCartTotals();
@@ -1082,6 +1095,7 @@
       msg += `• *Name:* ${name}\n`;
       msg += `• *Mobile:* ${mobile}\n`;
       msg += `• *WhatsApp:* ${whatsapp}\n`;
+      if (email) msg += `• *Email:* ${email}\n`;
       msg += `• *Address:* ${address}, ${city} - ${pincode}, ${state}\n`;
       msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
       msg += `📦 *ORDER ITEMS TABLE*\n`;
@@ -1120,7 +1134,7 @@
       const invoicePayload = {
         invoiceNo: invoiceNo,
         date: new Date().toLocaleDateString('en-IN'),
-        customer: { name, mobile, whatsapp, address, city, pincode, state },
+        customer: { name, mobile, whatsapp, email, address, city, pincode, state },
         items: invoiceItems,
         totals: { offerTotal, packing, grand }
       };
@@ -1131,18 +1145,24 @@
         console.error("Failed to save order invoice:", err);
       }
 
-      // Send HTML Invoice Email via PHP
-      fetch('php/send-mail.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'orderInquiry',
-          ...invoicePayload
-        })
-      })
-      .then(res => res.json())
-      .then(data => console.log('Email Sent Status:', data))
-      .catch(err => console.error('Email error:', err));
+      // Send HTML Invoice Email via PHP and wait for response (or 4s timeout)
+      try {
+        const fetchPromise = fetch('php/send-mail.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            formType: 'orderInquiry',
+            ...invoicePayload
+          })
+        }).then(res => res.json());
+
+        const timeoutPromise = new Promise(resolve => setTimeout(() => resolve({ status: 'timeout' }), 4000));
+        const mailResult = await Promise.race([fetchPromise, timeoutPromise]);
+        console.log('Email Sent Status:', mailResult);
+      } catch (err) {
+        console.error('Email sending error:', err);
+      }
 
       // Clear cart items and reset localStorage back to 0
       try {
@@ -1159,10 +1179,8 @@
       window.open(waUrl, '_blank');
 
       // Redirect to printable Invoice page
-      setTimeout(() => {
-        window.location.href = 'invoice.html';
-      }, 600);
       closeCheckoutModal();
+      window.location.href = 'invoice.html';
     }
 
     /* ---------- Lightbox Modal ---------- */
@@ -1253,6 +1271,23 @@
       if (Object.keys(cart).length === 0) return;
       openCartModal();
     });
+
+    // Enforce numbers-only and length restrictions for Mobile, WhatsApp and Pin Code fields
+    const restrictNumericInput = (id, maxLen) => {
+      const input = document.getElementById(id);
+      if (!input) return;
+      ['input', 'paste'].forEach(evtType => {
+        input.addEventListener(evtType, () => {
+          setTimeout(() => {
+            input.value = input.value.replace(/\D/g, '').slice(0, maxLen);
+          }, 0);
+        });
+      });
+    };
+
+    restrictNumericInput('custMobile', 10);
+    restrictNumericInput('custWhatsapp', 10);
+    restrictNumericInput('custPincode', 6);
 
     loadCart();
     render();
