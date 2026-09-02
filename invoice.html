@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagercoil Crackers Mart — Order Invoice</title>
+    <link rel="icon" type="image/png" href="assets/logo-nagarcoil.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo-nagarcoil.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-red: #c0392b;
+            --primary-dark: #8e24aa;
+            --maroon: #800020;
+            --text-dark: #2c3e50;
+            --text-muted: #7f8c8d;
+            --border-color: #e2e8f0;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .invoice-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        /* Action Buttons (Print / Download / WhatsApp) */
+        .actions-bar {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-print {
+            background: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Header Layout */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .company-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: var(--maroon);
+            margin-bottom: 6px;
+        }
+
+        .company-info p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .logo-box {
+            text-align: right;
+        }
+
+        .logo-box img {
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        .invoice-title {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        .invoice-title h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            color: var(--primary-red);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Details Section */
+        .details-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 35px;
+        }
+
+        .bill-to h3 {
+            font-size: 14px;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bill-to p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .bill-to .cust-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        .meta-table {
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        .meta-table td {
+            padding: 4px 0;
+            padding-left: 20px;
+            font-size: 13px;
+        }
+
+        .meta-table td.label {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .meta-table td.val {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Products Table */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .items-table th {
+            background-color: var(--primary-red);
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .items-table th.right,
+        .items-table td.right {
+            text-align: right;
+        }
+
+        .items-table th.center,
+        .items-table td.center {
+            text-align: center;
+        }
+
+        .items-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13.5px;
+        }
+
+        .items-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Summary Calculations */
+        .summary-wrap {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .summary-box {
+            width: 320px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .summary-row.total {
+            border-top: 2px solid var(--primary-red);
+            border-bottom: 2px solid var(--primary-red);
+            padding: 12px 0;
+            margin-top: 8px;
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--primary-red);
+        }
+
+        /* Terms & Bank Info */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        .terms-box h4,
+        .bank-box h4 {
+            font-size: 13px;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .terms-box p,
+        .bank-box p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Print Media Style */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .actions-bar {
+                display: none !important;
+            }
+
+            .invoice-card {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="actions-bar">
+        <a href="order.html" class="btn-action" style="background:#e2e8f0; color:#334155;">← Back to Order</a>
+        <div style="display:flex; gap:10px;">
+            <button onclick="downloadPDF()" class="btn-action btn-print" style="background:#16a34a;">📥 Download PDF</button>
+            <button onclick="window.print()" class="btn-action btn-print">🖨️ Print</button>
+            <a id="whatsappShareBtn" href="#" target="_blank" class="btn-action btn-whatsapp">💬 Send via WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="invoice-card" id="invoice">
+        <!-- Header -->
+        <div class="invoice-header">
+            <div class="company-info">
+                <h2>Nagercoil Crackers Mart</h2>
+                <p>Kottar, Nagercoil, Kanyakumari Dist.<br>Tamil Nadu — 629002<br>Phone: +91 9790454711 / +91 7092799913</p>
+            </div>
+            <div class="logo-box">
+                <img src="assets/logo-nagarcoil.png" alt="Nagercoil Crackers Mart Logo">
+            </div>
+        </div>
+
+        <div class="invoice-title">
+            <h1>Diwali Order Invoice</h1>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="details-grid">
+            <div class="bill-to">
+                <h3>Bill To</h3>
+                <p class="cust-name" id="invCustName">Customer Name</p>
+                <p id="invCustAddress">123 Customer St, Nagercoil</p>
+                <p id="invCustContact">Mobile: +91 9876543210</p>
+            </div>
+            <div>
+                <table class="meta-table">
+                    <tr>
+                        <td class="label">Invoice #</td>
+                        <td class="val" id="invNumber">NCM-2026-0001</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Invoice Date</td>
+                        <td class="val" id="invDate">10-02-2026</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Payment Status</td>
+                        <td class="val" style="color:#16a34a;">Pending / Order Placed</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="center" style="width: 70px;">QTY</th>
+                    <th>Description</th>
+                    <th class="right">Unit Price</th>
+                    <th class="right">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invItemsBody">
+                <tr>
+                    <td class="center">5</td>
+                    <td>10 Cm Sparklers (Electric)</td>
+                    <td class="right">₹45.00</td>
+                    <td class="right">₹225.00</td>
+                </tr>
+                <tr>
+                    <td class="center">2</td>
+                    <td>Flower Pots Special (5 Pcs)</td>
+                    <td class="right">₹180.00</td>
+                    <td class="right">₹360.00</td>
+                </tr>
+                <tr>
+                    <td class="center">1</td>
+                    <td>2 3/4" Chakar Deluxe</td>
+                    <td class="right">₹120.00</td>
+                    <td class="right">₹120.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Summary Calculation -->
+        <div class="summary-wrap">
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="invSubtotal">₹705.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Secured Packing Fee</span>
+                    <span id="invPacking">₹75.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total (INR)</span>
+                    <span id="invTotal">₹780.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Bank Details -->
+        <div class="footer-grid">
+            <div class="terms-box">
+                <h4>Terms & Conditions</h4>
+                <p>1. Prices are net wholesale for Diwali 2026.<br>2. Free door delivery applicable within 20km of Nagercoil for valid orders.<br>3. Handle crackers with care under adult supervision.</p>
+            </div>
+            <div class="bank-box">
+                <h4>Bank Payment Details</h4>
+                <p><b>Bank:</b> Indian Overseas Bank (IOB)<br><b>A/C Name:</b> PRADEEP PJ<br><b>A/C No:</b> 006301000046162<br><b>IFSC:</b> IOBA0000063<br><b>UPI ID:</b> itspjpradeep-1@okicici</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load dynamic invoice data from localStorage if available
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const storedInvoice = localStorage.getItem('lastOrderInvoice');
+                if (!storedInvoice) return;
+
+                const data = JSON.parse(storedInvoice);
+                if (!data) return;
+
+                document.getElementById('invCustName').textContent = data.customer.name || 'Valued Customer';
+                document.getElementById('invCustAddress').textContent = `${data.customer.address}, ${data.customer.city} - ${data.customer.pincode}, ${data.customer.state}`;
+                document.getElementById('invCustContact').textContent = `Mobile: ${data.customer.mobile} | WhatsApp: ${data.customer.whatsapp}`;
+                document.getElementById('invNumber').textContent = data.invoiceNo || `NCM-${Math.floor(100000 + Math.random() * 900000)}`;
+                document.getElementById('invDate').textContent = data.date || new Date().toLocaleDateString('en-IN');
+
+                const tbody = document.getElementById('invItemsBody');
+                if (data.items && data.items.length > 0) {
+                    tbody.innerHTML = '';
+                    data.items.forEach(item => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td class="center">${item.qty}</td>
+                            <td>${item.name} ${item.pack ? `(${item.pack})` : ''}</td>
+                            <td class="right">₹${parseFloat(item.price).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+                            <td class="right">₹${parseFloat(item.total).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+
+                document.getElementById('invSubtotal').textContent = `₹${parseFloat(data.totals.offerTotal).toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+                document.getElementById('invPacking').textContent = `₹${parseFloat(data.totals.packing).toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+                document.getElementById('invTotal').textContent = `₹${parseFloat(data.totals.grand).toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+
+                // WhatsApp share URL link
+                const waBtn = document.getElementById('whatsappShareBtn');
+                if (waBtn && data.customer.whatsapp) {
+                    const text = encodeURIComponent(`Hi Nagercoil Crackers Mart, here is my order invoice #${data.invoiceNo} for ₹${data.totals.grand}.`);
+                    waBtn.href = `https://wa.me/917092799913?text=${text}`;
+                }
+
+                // Auto download PDF file directly after rendering
+                setTimeout(() => {
+                    downloadPDF();
+                }, 600);
+            } catch (e) {
+                console.error("Error rendering invoice:", e);
+            }
+        });
+
+        function downloadPDF() {
+            const element = document.getElementById('invoice');
+            const invNo = document.getElementById('invNumber').textContent || 'Invoice';
+            const opt = {
+                margin:       10,
+                filename:     `Diwali_Order_Invoice_${invNo}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save().then(() => {
+                // After PDF is generated & saved, automatically redirect back to Homepage
+                setTimeout(() => {
+                    window.location.href = 'index.html?order=success';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
