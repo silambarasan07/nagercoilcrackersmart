@@ -13,4 +13,4 @@ Official website and interactive order system for Nagercoil Crackers Mart.
 
 ## Contact Information
 - **Phone / WhatsApp**: +91 9790454711 / +91 8248159490
-- **Location**: Kottar, Nagercoil, Kanyakumari District, Tamil Nadu — 629002
+- **Location**: Nagercoil, Kanyakumari District, Tamil Nadu — 629002
