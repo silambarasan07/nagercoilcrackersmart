@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -40,7 +40,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background:
                 radial-gradient(ellipse 900px 500px at 15% -10%, #bae6fd 0%, transparent 60%),
                 radial-gradient(ellipse 700px 500px at 100% 0%, #cff4fc 0%, transparent 55%),
@@ -71,14 +71,24 @@
         h3,
         h4,
         .brand-font {
-            font-family: 'Cinzel', serif;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .logo-title {
+            color: #d97706;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
         }
 
         .gold-gradient-text {
-            background: linear-gradient(180deg, #0284c7, #0369a1 70%);
+            background: linear-gradient(135deg, #d97706 0%, #b45309 70%);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
@@ -95,6 +105,35 @@
             border: 1px solid var(--line);
             border-radius: var(--radius);
             box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
+        }
+
+        .nav-link {
+            position: relative;
+            color: #334155;
+            padding: 8px 4px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #d97706, #f59e0b);
+            border-radius: 99px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link.active {
+            color: #d97706;
+            font-weight: 700;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
         }
 
         .firework-animation {
@@ -314,9 +353,100 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .pill-tag-dark b {
-            color: #38bdf8;
-            font-weight: 600;
+        /* Hero Banner Slider Styles */
+        .hero-slider-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        .hero-slide-container {
+            position: relative;
+            width: 100%;
+            min-height: 540px;
+        }
+
+        @media (min-width: 640px) {
+            .hero-slide-container {
+                min-height: 580px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-slide-container {
+                min-height: 640px;
+            }
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.6s ease-in-out;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.35);
+            transition: all 0.35s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-dot:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-dot.active {
+            width: 36px;
+            background: #0284c7;
+            border-color: #38bdf8;
+            box-shadow: 0 0 14px rgba(2, 132, 199, 0.8);
+        }
+
+        .slide-progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0284c7, #38bdf8, #f59e0b);
+            width: 0%;
+            z-index: 30;
+            transition: width 5s linear;
+        }
+
+        .banner-full-img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            display: block;
+            background-color: #0f172a;
+        }
+
+        @media (max-width: 639px) {
+            .banner-full-img {
+                object-fit: contain;
+                background-color: #0f172a;
+            }
         }
     </style>
 </head>
@@ -364,7 +494,7 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="nav-link font-medium">Home</a>
+                    <a href="#home" class="nav-link active font-medium">Home</a>
                     <a href="#categories" class="nav-link font-medium">Categories</a>
                     <a href="#products" class="nav-link font-medium">Products</a>
                     <a href="order.html" class="btn-gold px-5 py-2 rounded-full text-sm">Order Now (Price List)</a>
@@ -412,68 +542,116 @@
         </nav>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Banner Slider Section -->
     <section id="home"
-        class="relative py-24 md:py-36 min-h-[600px] flex items-center overflow-hidden border-b border-[#cbd5e1]">
-        <!-- Full Hero Background Video -->
-        <div class="absolute inset-0 z-0 overflow-hidden">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-80 scale-105">
-                <source src="assets/videos/banner.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-slate-950/85"></div>
-        </div>
+        class="relative overflow-hidden border-b border-[#cbd5e1] bg-slate-950 text-white hero-slider-wrapper">
+        <div id="heroSliderContainer" class="hero-slide-container relative">
 
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-                <div class="text-left md:w-3/5">
-                    <p
-                        class="brand-font text-[#38bdf8] tracking-widest text-xs md:text-sm uppercase mb-3 font-bold drop-shadow">
-                        Celebrate Safe • Celebrate Bright</p>
-                    <h2
-                        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 hero-title-bright leading-tight firework-animation">
-                        Nagercoil Crackers Mart
-                    </h2>
-                    <p
-                        class="text-lg md:text-xl mb-8 text-slate-100 leading-relaxed max-w-2xl font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                        Light up your Diwali with premium quality Sivakasi crackers at wholesale prices. Door delivery
-                        across Kanyakumari district & Tamil Nadu!
-                    </p>
-
-                    <div class="flex flex-wrap gap-3 mb-8">
-                        <span class="pill-tag-dark">Booking <b>14 Sep – 15 Oct 2026</b></span>
-                        <span class="pill-tag-dark">Call / WA: <a href="tel:9790454711"
-                                class="text-[#38bdf8] hover:underline font-bold">9790454711</a> (<a
-                                href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                                target="_blank" rel="noopener noreferrer" class="text-[#38bdf8] hover:underline">WA</a>)
-                            / <a href="tel:8248159490" class="text-[#38bdf8] hover:underline font-bold">8248159490</a>
-                            (<a href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                                target="_blank" rel="noopener noreferrer"
-                                class="text-[#38bdf8] hover:underline">WA</a>)</span>
-                        <span class="pill-tag-dark">Free Door Delivery <b>within 20km Nagercoil</b></span>
-                    </div>
-
-                    <div class="flex flex-wrap gap-3">
-                        <a href="order.html"
-                            class="btn-gold px-5 py-2.5 rounded-full font-bold text-center text-sm shadow-md">
-                            View Diwali 2026 Order List
-                        </a>
-                        <a href="#contact"
-                            class="border border-white/40 text-white px-5 py-2.5 rounded-full font-semibold text-center text-sm hover:bg-white hover:text-slate-900 transition-all bg-black/30 backdrop-blur-sm shadow-md">
-                            Contact Us
-                        </a>
+            <!-- Slide 0: Main Video Banner -->
+            <div class="hero-slide active px-4 py-8 sm:py-12 md:py-24">
+                <div class="absolute inset-0 z-0 overflow-hidden">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-75 scale-105"
+                        preload="auto">
+                        <source src="assets/videos/banner.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/90">
                     </div>
                 </div>
 
-                <!-- Hero Video Frame Feature -->
-                <div class="md:w-2/5 flex justify-center">
-                    <div
-                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#0284c7]/60 shadow-[0_0_40px_rgba(2,132,199,0.3)]">
-                        <video autoplay loop muted playsinline class="w-full h-full object-cover scale-110">
-                            <source src="assets/videos/banner.mp4" type="video/mp4">
-                        </video>
+                <div class="container mx-auto px-4 relative z-10 w-full">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+                        <div class="text-left md:w-3/5">
+                            <p
+                                class="brand-font text-[#38bdf8] tracking-widest text-xs md:text-sm uppercase mb-2 font-bold drop-shadow">
+                                🎆 Celebrate Safe • Celebrate Bright
+                            </p>
+                            <h2
+                                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-5 hero-title-bright leading-tight firework-animation">
+                                Nagercoil Crackers Mart
+                            </h2>
+                            <p
+                                class="text-sm sm:text-base md:text-xl mb-4 md:mb-8 text-slate-100 leading-relaxed max-w-2xl font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                                Light up your Diwali with premium quality Sivakasi crackers at wholesale prices. Door
+                                delivery across Kanyakumari district & Tamil Nadu!
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 md:gap-3 mb-5 md:mb-8">
+                                <span class="pill-tag-dark">Booking <b>14 Sep – 15 Oct 2026</b></span>
+                                <span class="pill-tag-dark">Call / WA: <a href="tel:9790454711"
+                                        class="text-[#38bdf8] hover:underline font-bold">9790454711</a> / <a
+                                        href="tel:8248159490"
+                                        class="text-[#38bdf8] hover:underline font-bold">8248159490</a></span>
+                                <span class="pill-tag-dark">Free Delivery <b>within 20km Nagercoil</b></span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-3">
+                                <a href="order.html"
+                                    class="btn-gold px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-center text-xs sm:text-sm shadow-lg flex items-center gap-2">
+                                    <i class="fas fa-list-alt"></i> View Diwali 2026 Price List
+                                </a>
+                                <a href="#contact"
+                                    class="border border-white/40 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-semibold text-center text-xs sm:text-sm hover:bg-white hover:text-slate-900 transition-all bg-black/30 backdrop-blur-sm shadow-md">
+                                    Contact Us
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hero Circular Video Frame (Desktop/Tablet Only) -->
+                        <div class="hidden md:flex md:w-2/5 justify-center">
+                            <div
+                                class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#0284c7]/60 shadow-[0_0_40px_rgba(2,132,199,0.3)]">
+                                <video autoplay loop muted playsinline class="w-full h-full object-cover scale-110">
+                                    <source src="assets/videos/banner.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide 1: 7K Combo Banner (Full Screen Display, Edge-to-Edge) -->
+            <div class="hero-slide p-0">
+                <a href="order.html" class="block w-full h-full">
+                    <img src="assets/videos/7K combo-banner.png" alt="7K Combo Banner" class="banner-full-img">
+                </a>
+            </div>
+
+            <!-- Slide 2: 10K Combo Banner (Full Screen Display, Edge-to-Edge) -->
+            <div class="hero-slide p-0">
+                <a href="order.html" class="block w-full h-full">
+                    <img src="assets/videos/10k combo-banner.png" alt="10K Combo Banner" class="banner-full-img">
+                </a>
+            </div>
+
+            <!-- Slide 3: 20K Combo Banner (Full Screen Display, Edge-to-Edge) -->
+            <div class="hero-slide p-0">
+                <a href="order.html" class="block w-full h-full">
+                    <img src="assets/videos/20k combo-banner.png" alt="20K Combo Banner" class="banner-full-img">
+                </a>
+            </div>
+
+            <!-- Navigation Arrow Buttons -->
+            <button onclick="manualPrev()"
+                class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-slate-900/70 hover:bg-[#0284c7] text-white border border-white/20 backdrop-blur-md transition-all flex items-center justify-center shadow-lg group focus:outline-none"
+                aria-label="Previous Slide">
+                <i class="fas fa-chevron-left text-lg group-hover:-translate-x-0.5 transition-transform"></i>
+            </button>
+            <button onclick="manualNext()"
+                class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-slate-900/70 hover:bg-[#0284c7] text-white border border-white/20 backdrop-blur-md transition-all flex items-center justify-center shadow-lg group focus:outline-none"
+                aria-label="Next Slide">
+                <i class="fas fa-chevron-right text-lg group-hover:translate-x-0.5 transition-transform"></i>
+            </button>
+
+            <!-- Dots Indicators -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5">
+                <button onclick="goToSlide(0)" class="hero-dot active" aria-label="Slide 1"></button>
+                <button onclick="goToSlide(1)" class="hero-dot" aria-label="Slide 2"></button>
+                <button onclick="goToSlide(2)" class="hero-dot" aria-label="Slide 3"></button>
+                <button onclick="goToSlide(3)" class="hero-dot" aria-label="Slide 4"></button>
+            </div>
+
+            <!-- 5-Second Animated Progress Bar -->
+            <div id="slideProgressBar" class="slide-progress-bar"></div>
         </div>
     </section>
 
@@ -1345,6 +1523,150 @@
                     el.classList.add('animate-on-scroll');
                     revealObserver.observe(el);
                 }
+            });
+        });
+
+        // Hero Banner Slider Controller (Infinite Auto Slider)
+        let currentSlide = 0;
+        let slideTimer = null;
+        const SLIDE_DURATION = 5000; // 5 seconds per slide
+
+        function resetProgressBar() {
+            const progressBar = document.getElementById('slideProgressBar');
+            if (!progressBar) return;
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            void progressBar.offsetWidth; // Force reflow
+            progressBar.style.transition = `width ${SLIDE_DURATION}ms linear`;
+            progressBar.style.width = '100%';
+        }
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            if (!slides || slides.length === 0) return;
+
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            slides.forEach((slide, i) => {
+                const video = slide.querySelector('video');
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                    if (video) {
+                        video.currentTime = 0;
+                        video.play().catch(() => { });
+                    }
+                } else {
+                    slide.classList.remove('active');
+                    if (video) {
+                        video.pause();
+                    }
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            resetProgressBar();
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+            restartAutoSlide();
+        }
+
+        function manualNext() {
+            nextSlide();
+            restartAutoSlide();
+        }
+
+        function manualPrev() {
+            prevSlide();
+            restartAutoSlide();
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            resetProgressBar();
+            slideTimer = setInterval(() => {
+                nextSlide();
+            }, SLIDE_DURATION);
+        }
+
+        function stopAutoSlide() {
+            if (slideTimer) {
+                clearInterval(slideTimer);
+                slideTimer = null;
+            }
+        }
+
+        function restartAutoSlide() {
+            startAutoSlide();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderContainer = document.getElementById('heroSliderContainer');
+            if (sliderContainer) {
+                // Touch Swipe Events
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                sliderContainer.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                sliderContainer.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if (touchStartX - touchEndX > 40) {
+                        manualNext();
+                    } else if (touchEndX - touchStartX > 40) {
+                        manualPrev();
+                    }
+                }, { passive: true });
+            }
+
+            // Start hero slider immediately
+            showSlide(0);
+            startAutoSlide();
+
+            // Navbar Active Link Scroll Highlighter
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
             });
         });
     </script>
