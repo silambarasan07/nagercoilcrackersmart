@@ -34,8 +34,8 @@ try {
 
     $mail->setFrom('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart');
     $mail->addAddress('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart Admin');
-    $mail->addAddress('nagercoilcrackersmart@gmail.com', 'Nagercoil Crackers Mart Admin');
-    $mail->addBCC('rajeith.t@gmail.com', 'Nagercoil Crackers Mart Admin');
+    // $mail->addAddress('nagercoilcrackersmart@gmail.com', 'Nagercoil Crackers Mart Admin');
+    // $mail->addBCC('rajeith.t@gmail.com', 'Nagercoil Crackers Mart Admin');
 
 
     $mail->isHTML(true);
