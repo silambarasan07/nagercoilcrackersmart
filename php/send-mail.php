@@ -76,10 +76,10 @@ try {
 
             $itemRowsHtml .= "
                 <tr>
-                    <td align='center' style='padding: 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px;'>{$qty}</td>
-                    <td style='padding: 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px;'>{$name}{$pack}</td>
-                    <td align='right' style='padding: 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px;'>₹{$price}</td>
-                    <td align='right' style='padding: 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px; font-weight: 600;'>₹{$total}</td>
+                    <td align='center' style='padding: 6px 4px; border-bottom: 1px solid #e2e8f0; font-size: 11.5px;'>{$qty}</td>
+                    <td style='padding: 6px 6px; border-bottom: 1px solid #e2e8f0; font-size: 11.5px; word-break: break-word;'>{$name}{$pack}</td>
+                    <td align='right' style='padding: 6px 4px; border-bottom: 1px solid #e2e8f0; font-size: 11.5px; white-space: nowrap;'>₹{$price}</td>
+                    <td align='right' style='padding: 6px 4px; border-bottom: 1px solid #e2e8f0; font-size: 11.5px; font-weight: 600; white-space: nowrap;'>₹{$total}</td>
                 </tr>
             ";
         }
@@ -91,48 +91,48 @@ try {
         $mail->Subject = "New Diwali 2026 Order Invoice [{$invoiceNo}] - {$custName}";
 
         $mail->Body = "
-        <div style='font-family: Arial, sans-serif; max-width: 680px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; padding: 30px; border-radius: 12px;'>
-            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 20px;'>
+        <div style='font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; box-sizing: border-box;'>
+            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 12px;'>
                 <tr>
-                    <td>
-                        <h2 style='color: #800020; margin: 0; font-size: 22px;'>Nagercoil Crackers Mart</h2>
-                        <p style='color: #64748b; font-size: 12px; margin: 4px 0 0 0; line-height: 1.5;'>
+                    <td valign='top' style='padding-right: 8px;'>
+                        <h2 style='color: #800020; margin: 0; font-size: 18px; line-height: 1.2;'>Nagercoil Crackers Mart</h2>
+                        <p style='color: #64748b; font-size: 11px; margin: 3px 0 0 0; line-height: 1.4;'>
                             Nagercoil, Kanyakumari Dist., Tamil Nadu — 629002<br>
                             Phone: +91 9790454711 / +91 8248159490
                         </p>
                     </td>
-                    <td align='right' valign='top'>
-                        <h1 style='color: #c0392b; font-size: 26px; margin: 0; text-transform: uppercase;'>DIWALI INVOICE</h1>
-                        <span style='color: #475569; font-size: 12px; font-weight: bold;'># {$invoiceNo}</span>
+                    <td align='right' valign='top' style='white-space: nowrap;'>
+                        <h1 style='color: #c0392b; font-size: 18px; margin: 0; text-transform: uppercase; line-height: 1.2;'>DIWALI INVOICE</h1>
+                        <span style='color: #475569; font-size: 11px; font-weight: bold;'># {$invoiceNo}</span>
                     </td>
                 </tr>
             </table>
 
-            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 25px; border-top: 2px solid #c0392b; padding-top: 15px;'>
+            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 15px; border-top: 2px solid #c0392b; padding-top: 10px;'>
                 <tr>
-                    <td width='60%' valign='top'>
-                        <strong style='color: #c0392b; font-size: 12px; text-transform: uppercase;'>BILL TO:</strong><br>
-                        <b style='font-size: 15px; color: #0f172a;'>{$custName}</b><br>
-                        <span style='font-size: 13px; color: #334155; line-height: 1.5;'>
+                    <td width='55%' valign='top' style='padding-right: 8px;'>
+                        <strong style='color: #c0392b; font-size: 11px; text-transform: uppercase;'>BILL TO:</strong><br>
+                        <b style='font-size: 13px; color: #0f172a;'>{$custName}</b><br>
+                        <span style='font-size: 11.5px; color: #334155; line-height: 1.4; display: block; margin-top: 2px;'>
                             {$custAddress}<br>
                             {$custCity} - {$custPincode}, {$custState}<br>
-                            Mobile: {$custMobile} | WhatsApp: {$custWhatsapp}
+                            Mobile: {$custMobile} | WA: {$custWhatsapp}
                         </span>
                     </td>
-                    <td width='40%' align='right' valign='top' style='font-size: 12px; color: #334155;'>
-                        <p style='margin: 3px 0;'><strong>Date:</strong> {$submittedAt24}</p>
-                        <p style='margin: 3px 0;'><strong>Status:</strong> <span style='color: #16a34a; font-weight: bold;'>Order Placed</span></p>
+                    <td width='45%' align='right' valign='top' style='font-size: 11px; color: #334155; white-space: nowrap;'>
+                        <p style='margin: 2px 0;'><strong>Date:</strong> {$submittedAt24}</p>
+                        <p style='margin: 2px 0;'><strong>Status:</strong> <span style='color: #16a34a; font-weight: bold;'>Order Placed</span></p>
                     </td>
                 </tr>
             </table>
 
-            <table width='100%' cellpadding='0' cellspacing='0' style='border-collapse: collapse; margin-bottom: 20px;'>
+            <table width='100%' cellpadding='0' cellspacing='0' style='border-collapse: collapse; margin-bottom: 15px; width: 100%; table-layout: auto;'>
                 <thead>
-                    <tr style='background-color: #c0392b; color: #ffffff; font-size: 12px; text-transform: uppercase;'>
-                        <th align='center' style='padding: 10px; width: 50px;'>QTY</th>
-                        <th align='left' style='padding: 10px;'>Description</th>
-                        <th align='right' style='padding: 10px;'>Unit Price</th>
-                        <th align='right' style='padding: 10px;'>Amount</th>
+                    <tr style='background-color: #c0392b; color: #ffffff; font-size: 11px; text-transform: uppercase;'>
+                        <th align='center' style='padding: 6px 4px; width: 35px;'>QTY</th>
+                        <th align='left' style='padding: 6px 6px;'>Description</th>
+                        <th align='right' style='padding: 6px 4px; white-space: nowrap;'>Unit Price</th>
+                        <th align='right' style='padding: 6px 4px; white-space: nowrap;'>Amount</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -140,11 +140,11 @@ try {
                 </tbody>
             </table>
 
-            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 25px;'>
+            <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 15px;'>
                 <tr>
-                    <td width='50%'></td>
-                    <td width='50%'>
-                        <table width='100%' cellpadding='4' cellspacing='0' style='font-size: 13px; color: #334155;'>
+                    <td width='35%'></td>
+                    <td width='65%'>
+                        <table width='100%' cellpadding='3' cellspacing='0' style='font-size: 12px; color: #334155;'>
                             <tr>
                                 <td>Subtotal:</td>
                                 <td align='right'>₹{$subTotalFmt}</td>
@@ -153,16 +153,16 @@ try {
                                 <td>Secured Packing:</td>
                                 <td align='right'>₹{$packingFmt}</td>
                             </tr>
-                            <tr style='border-top: 2px solid #c0392b; font-size: 16px; font-weight: bold; color: #c0392b;'>
-                                <td style='padding-top: 8px;'>Total Amount:</td>
-                                <td align='right' style='padding-top: 8px;'>₹{$grandFmt}</td>
+                            <tr style='border-top: 1.5px solid #c0392b; font-size: 14px; font-weight: bold; color: #c0392b;'>
+                                <td style='padding-top: 6px;'>Total Amount:</td>
+                                <td align='right' style='padding-top: 6px;'>₹{$grandFmt}</td>
                             </tr>
                         </table>
                     </td>
                 </tr>
             </table>
 
-            <div style='border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 11px; color: #64748b; line-height: 1.5;'>
+            <div style='border-top: 1px solid #e2e8f0; padding-top: 10px; font-size: 10.5px; color: #64748b; line-height: 1.4;'>
                 <b>Bank Details:</b> Indian Overseas Bank | Account: 006301000046162 | IFSC: IOBA0000063 | UPI: itspjpradeep-1@okicici<br>
                 Submitted on: {$submittedAt24} (24h) / {$submittedAt12} (12h)
             </div>
