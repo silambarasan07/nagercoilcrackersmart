@@ -194,6 +194,23 @@
             box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.25);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            animation: goldBlink 1.5s infinite ease-in-out;
+        }
+
+        @keyframes goldBlink {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+                filter: brightness(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(245, 158, 11, 0.95), 0 0 10px rgba(217, 119, 6, 0.8);
+                filter: brightness(1.2);
+            }
         }
 
         .btn-gold:hover {
@@ -201,6 +218,22 @@
             box-shadow: 0 8px 25px rgba(217, 119, 6, 0.6);
             background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
             color: #ffffff;
+        }
+
+        .btn-blue-select {
+            background: #0284c7;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-blue-select:hover {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
+            transform: translateY(-2px);
         }
 
         .btn-ember {
@@ -425,13 +458,14 @@
 
         .slide-progress-bar {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             height: 4px;
             background: linear-gradient(90deg, #0284c7, #38bdf8, #f59e0b);
             width: 0%;
             z-index: 30;
             transition: width 5s linear;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.6);
         }
 
         .banner-full-img {
@@ -456,23 +490,27 @@
     <!-- Secondary Top Header Marquee Bar -->
     <div class="top-marquee-bar">
         <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite">
-            🎆 <b>Booking 14 Sep – 15 Oct 2026</b> &nbsp;&nbsp;•&nbsp;&nbsp; 📞 <b>Call / WhatsApp: <a
-                    href="tel:9790454711" class="hover:underline">9790454711</a> (<a
+            🎆 <b>Booking 14 Sep – 15 Oct 2026</b> &nbsp;&nbsp;•&nbsp;&nbsp; 📞 <b>Call / WhatsApp:
+                <a href="tel:9790454711" class="hover:underline">9790454711</a> (<a
                     href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                    target="_blank" rel="noopener noreferrer" class="hover:underline">WA</a>) / <a href="tel:8248159490"
-                    class="hover:underline">8248159490</a> (<a
+                    target="_blank" rel="noopener noreferrer" class="hover:underline text-emerald-300 font-bold">WA</a>)
+                &nbsp;|&nbsp;
+                <a href="tel:8248159490" class="hover:underline">8248159490</a> (<a
                     href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                    target="_blank" rel="noopener noreferrer" class="hover:underline">WA</a>)</b>
+                    target="_blank" rel="noopener noreferrer"
+                    class="hover:underline text-emerald-300 font-bold">WA</a>)</b>
             &nbsp;&nbsp;•&nbsp;&nbsp; 🚚 <b>Free Door Delivery</b> within 20 km of Nagercoil
             &nbsp;&nbsp;•&nbsp;&nbsp; 💥 <b>Diwali 2026 Wholesale Price List</b>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🎆
-            <b>Booking 14 Sep – 15 Oct 2026</b> &nbsp;&nbsp;•&nbsp;&nbsp; 📞 <b>Call / WhatsApp: <a
-                    href="tel:9790454711" class="hover:underline">9790454711</a> (<a
+            <b>Booking 14 Sep – 15 Oct 2026</b> &nbsp;&nbsp;•&nbsp;&nbsp; 📞 <b>Call / WhatsApp:
+                <a href="tel:9790454711" class="hover:underline">9790454711</a> (<a
                     href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                    target="_blank" rel="noopener noreferrer" class="hover:underline">WA</a>) / <a href="tel:8248159490"
-                    class="hover:underline">8248159490</a> (<a
+                    target="_blank" rel="noopener noreferrer" class="hover:underline text-emerald-300 font-bold">WA</a>)
+                &nbsp;|&nbsp;
+                <a href="tel:8248159490" class="hover:underline">8248159490</a> (<a
                     href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                    target="_blank" rel="noopener noreferrer" class="hover:underline">WA</a>)</b>
+                    target="_blank" rel="noopener noreferrer"
+                    class="hover:underline text-emerald-300 font-bold">WA</a>)</b>
             &nbsp;&nbsp;•&nbsp;&nbsp; 🚚 <b>Free Door Delivery</b> within 20 km of Nagercoil
         </marquee>
     </div>
@@ -483,7 +521,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-3">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3">
+                <a href="./" class="flex items-center space-x-3">
                     <img src="assets/logo-nagarcoil.png" alt="Nagercoil Crackers Mart"
                         class="h-12 md:h-14 object-contain">
                     <div>
@@ -497,14 +535,14 @@
                     <a href="#home" class="nav-link active font-medium">Home</a>
                     <a href="#categories" class="nav-link font-medium">Categories</a>
                     <a href="#products" class="nav-link font-medium">Products</a>
-                    <a href="order.html" class="btn-gold px-5 py-2 rounded-full text-sm">Order Now (Price List)</a>
+                    <a href="order" class="btn-gold px-5 py-2 rounded-full text-sm">Order Now (Price List)</a>
                     <a href="#about" class="nav-link font-medium">About Us</a>
                     <a href="#contact" class="nav-link font-medium">Contact</a>
                 </nav>
 
                 <!-- Cart & Mobile Menu -->
                 <div class="flex items-center space-x-4">
-                    <a href="order.html" class="relative p-2 text-[#0284c7] hover:text-[#0369a1] transition-colors">
+                    <a href="order" class="relative p-2 text-[#0284c7] hover:text-[#0369a1] transition-colors">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span id="cart-count"
                             class="cart-badge absolute -top-1 -right-1 bg-[#d8593f] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
@@ -533,8 +571,8 @@
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">Categories</a>
             <a href="#products" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">Products</a>
-            <a href="order.html" onclick="toggleMobileMenu()"
-                class="btn-gold text-center py-3 rounded-full text-base">Order Now (Diwali 2026)</a>
+            <a href="order" onclick="toggleMobileMenu()" class="btn-gold text-center py-3 rounded-full text-base">Order
+                Now (Diwali 2026)</a>
             <a href="#about" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">About Us</a>
             <a href="#contact" onclick="toggleMobileMenu()"
@@ -577,15 +615,24 @@
 
                             <div class="flex flex-wrap gap-2 md:gap-3 mb-5 md:mb-8">
                                 <span class="pill-tag-dark">Booking <b>14 Sep – 15 Oct 2026</b></span>
-                                <span class="pill-tag-dark">Call / WA: <a href="tel:9790454711"
-                                        class="text-[#38bdf8] hover:underline font-bold">9790454711</a> / <a
-                                        href="tel:8248159490"
-                                        class="text-[#38bdf8] hover:underline font-bold">8248159490</a></span>
+                                <span class="pill-tag-dark">Call / WA:
+                                    <a href="tel:9790454711" class="text-[#38bdf8] hover:underline font-bold">📞
+                                        9790454711</a> (<a
+                                        href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-[#25D366] hover:underline font-bold">💬 WA</a>)
+                                    &nbsp;|&nbsp;
+                                    <a href="tel:8248159490" class="text-[#38bdf8] hover:underline font-bold">📞
+                                        8248159490</a> (<a
+                                        href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-[#25D366] hover:underline font-bold">💬 WA</a>)
+                                </span>
                                 <span class="pill-tag-dark">Free Delivery <b>within 20km Nagercoil</b></span>
                             </div>
 
                             <div class="flex flex-wrap gap-3">
-                                <a href="order.html"
+                                <a href="order"
                                     class="btn-gold px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-center text-xs sm:text-sm shadow-lg flex items-center gap-2">
                                     <i class="fas fa-list-alt"></i> View Diwali 2026 Price List
                                 </a>
@@ -611,21 +658,21 @@
 
             <!-- Slide 1: 7K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order.html" class="block w-full h-full">
+                <a href="order" class="block w-full h-full">
                     <img src="assets/videos/7K combo-banner.png" alt="7K Combo Banner" class="banner-full-img">
                 </a>
             </div>
 
             <!-- Slide 2: 10K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order.html" class="block w-full h-full">
+                <a href="order" class="block w-full h-full">
                     <img src="assets/videos/10k combo-banner.png" alt="10K Combo Banner" class="banner-full-img">
                 </a>
             </div>
 
             <!-- Slide 3: 20K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order.html" class="block w-full h-full">
+                <a href="order" class="block w-full h-full">
                     <img src="assets/videos/20k combo-banner.png" alt="20K Combo Banner" class="banner-full-img">
                 </a>
             </div>
@@ -711,7 +758,7 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <!-- Sparklers Card -->
-                <a href="order.html#cat-sparklers"
+                <a href="order#cat-sparklers"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -727,7 +774,7 @@
                 </a>
 
                 <!-- Flower Pots Card -->
-                <a href="order.html#cat-flower-pots-economy"
+                <a href="order#cat-flower-pots-economy"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -743,7 +790,7 @@
                 </a>
 
                 <!-- Ground Chakar Card -->
-                <a href="order.html#cat-ground-chakar"
+                <a href="order#cat-ground-chakar"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -759,7 +806,7 @@
                 </a>
 
                 <!-- Children's Special Card -->
-                <a href="order.html#cat-childrens-special"
+                <a href="order#cat-childrens-special"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -775,7 +822,7 @@
                 </a>
 
                 <!-- Rockets Card -->
-                <a href="order.html#cat-rockets"
+                <a href="order#cat-rockets"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -791,7 +838,7 @@
                 </a>
 
                 <!-- Atom Bombs Card -->
-                <a href="order.html#cat-bombs"
+                <a href="order#cat-bombs"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -807,7 +854,7 @@
                 </a>
 
                 <!-- Fancy Fountains Card -->
-                <a href="order.html#cat-new-fancy-fountains"
+                <a href="order#cat-new-fancy-fountains"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -823,7 +870,7 @@
                 </a>
 
                 <!-- View All Card -->
-                <a href="order.html"
+                <a href="order"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center border-[#0284c7]">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -848,7 +895,7 @@
                     <h2 class="text-3xl font-bold gold-gradient-text">Featured Fireworks</h2>
                     <p class="text-[#475569] text-sm mt-1">Popular crackers from our Diwali 2026 catalog</p>
                 </div>
-                <a href="order.html" class="btn-gold px-6 py-2.5 rounded-full text-sm">
+                <a href="order" class="btn-gold px-6 py-2.5 rounded-full text-sm">
                     Open Full Order List & Order Form →
                 </a>
             </div>
@@ -871,8 +918,8 @@
                             <span class="text-xs text-[#64748b] line-through block">₹160</span>
                             <span class="text-lg font-bold text-[#166534]">₹48</span>
                         </div>
-                        <a href="order.html"
-                            class="btn-gold px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
+                        <a href="order"
+                            class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
                 </div>
@@ -894,8 +941,8 @@
                             <span class="text-xs text-[#64748b] line-through block">₹365</span>
                             <span class="text-lg font-bold text-[#166534]">₹95</span>
                         </div>
-                        <a href="order.html"
-                            class="btn-gold px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
+                        <a href="order"
+                            class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
                 </div>
@@ -917,8 +964,8 @@
                             <span class="text-xs text-[#64748b] line-through block">₹295</span>
                             <span class="text-lg font-bold text-[#166534]">₹87</span>
                         </div>
-                        <a href="order.html"
-                            class="btn-gold px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
+                        <a href="order"
+                            class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
                 </div>
@@ -940,8 +987,8 @@
                             <span class="text-xs text-[#64748b] line-through block">₹2,200</span>
                             <span class="text-lg font-bold text-[#166534]">₹505</span>
                         </div>
-                        <a href="order.html"
-                            class="btn-gold px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
+                        <a href="order"
+                            class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
                 </div>
@@ -1060,110 +1107,174 @@
     <section id="contact" class="py-16 bg-white border-b border-[#cbd5e1]">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
+                <span class="brand-font text-[#0284c7] text-xs tracking-widest uppercase font-semibold block mb-1">Get
+                    In Touch</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-2">Contact & Booking</h2>
-                <p class="text-[#475569]">Get in touch with us for booking & wholesale inquiries</p>
+                <p class="text-[#475569]">Reach out directly or send us an inquiry for wholesale Diwali bookings</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white border border-[#cbd5e1] shadow-xl rounded-2xl p-8">
-                    <h3 class="font-bold text-lg text-[#0f172a] brand-font mb-4">Get a Enquiry</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-start">
+                <!-- Direct Phone & WhatsApp Cards (Left Column) -->
+                <div class="lg:col-span-6 flex flex-col space-y-5">
+
+                    <!-- Contact Box Heading -->
+                    <div class="bg-gradient-to-r from-[#0284c7] to-[#0369a1] text-white p-5 rounded-2xl shadow-md">
+                        <h3 class="font-bold text-lg brand-font flex items-center gap-2">
+                            <i class="fas fa-headset text-amber-300"></i> Direct Phone & WhatsApp Booking
+                        </h3>
+                        <p class="text-xs text-sky-100 mt-1">Tap below to call directly or message us on WhatsApp</p>
+                    </div>
+
+                    <!-- Number 1 Card -->
+                    <div
+                        class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-md hover:shadow-xl p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-sky-100 text-[#0284c7] flex items-center justify-center font-bold text-sm">1</span>
+                                <span class="font-bold text-[#0f172a] text-base">+91 9790454711</span>
+                            </div>
+                            <span
+                                class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Active
+                                Support</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="tel:9790454711"
+                                class="flex items-center justify-center gap-2 bg-[#0284c7] hover:bg-[#0369a1] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Call Now</span>
+                            </a>
+                            <a href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Number 2 Card -->
+                    <div
+                        class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-md hover:shadow-xl p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-sky-100 text-[#0284c7] flex items-center justify-center font-bold text-sm">2</span>
+                                <span class="font-bold text-[#0f172a] text-base">+91 8248159490</span>
+                            </div>
+                            <span
+                                class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Active
+                                Support</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="tel:8248159490"
+                                class="flex items-center justify-center gap-2 bg-[#0284c7] hover:bg-[#0369a1] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Call Now</span>
+                            </a>
+                            <a href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 rounded-xl text-xs font-bold transition-all shadow-sm">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Location & Bank Details Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm p-4 rounded-2xl transition-all">
+                            <div class="flex items-center gap-2 text-[#0284c7] font-bold text-xs uppercase mb-1">
+                                <i class="fas fa-map-marker-alt text-amber-500"></i> Location
+                            </div>
+                            <p class="text-xs text-[#334155] font-semibold">Nagercoil, Kanyakumari Dist, Tamil Nadu —
+                                629002</p>
+                        </div>
+                        <div
+                            class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm p-4 rounded-2xl transition-all">
+                            <div class="flex items-center gap-2 text-[#0284c7] font-bold text-xs uppercase mb-1">
+                                <i class="fas fa-university text-amber-500"></i> Payment Details
+                            </div>
+                            <p class="text-[11px] text-[#334155]">IOB: <b>006301000046162</b></p>
+                            <p class="text-[11px] text-[#334155]">GPay / PhonePe: <b>78710 60948</b></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Quick Inquiry Form (Right Column) -->
+                <div class="lg:col-span-6 bg-white border border-[#cbd5e1] shadow-xl rounded-2xl p-6 sm:p-8">
+                    <div class="border-b border-slate-100 pb-3 mb-5">
+                        <h3 class="font-bold text-lg text-[#0f172a] brand-font flex items-center gap-2">
+                            <i class="fas fa-paper-plane text-[#0284c7]"></i> Send Instant Inquiry
+                        </h3>
+                        <p class="text-xs text-[#64748b]">Fill the details below to receive bulk pricing options</p>
+                    </div>
+
                     <form id="contact-form">
                         <div class="mb-4">
                             <label class="block text-xs text-[#0f172a] mb-1 font-semibold">Name</label>
                             <input type="text"
-                                class="w-full px-4 py-2.5 rounded-lg bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] outline-none"
-                                placeholder="Your Name">
+                                class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20 outline-none transition-all"
+                                placeholder="Your Full Name">
                         </div>
                         <div class="mb-4">
-                            <label class="block text-xs text-[#0f172a] mb-1 font-semibold">Phone</label>
+                            <label class="block text-xs text-[#0f172a] mb-1 font-semibold">Mobile Number</label>
                             <input type="tel"
-                                class="w-full px-4 py-2.5 rounded-lg bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] outline-none"
-                                placeholder="Your Mobile Number" maxlength="10" inputmode="numeric" pattern="[0-9]*">
+                                class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20 outline-none transition-all"
+                                placeholder="10-Digit Mobile Number" maxlength="10" inputmode="numeric"
+                                pattern="[0-9]*">
                         </div>
                         <div class="mb-5">
-                            <label class="block text-xs text-[#0f172a] mb-1 font-semibold">Message</label>
+                            <label class="block text-xs text-[#0f172a] mb-1 font-semibold">Message / Inquiry <span
+                                    class="text-[#64748b] font-normal">(Optional)</span></label>
                             <textarea rows="3"
-                                class="w-full px-4 py-2.5 rounded-lg bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] outline-none"
-                                placeholder="Your message or inquiry"></textarea>
+                                class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#cbd5e1] text-[#0f172a] text-sm focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20 outline-none transition-all"
+                                placeholder="Tell us what crackers or combo boxes you are interested in (optional)..."></textarea>
                         </div>
                         <button type="submit"
-                            class="w-full btn-gold py-3 rounded-lg text-sm font-semibold transition-all duration-300">
-                            Send Message
+                            class="w-full btn-gold py-3.5 rounded-xl text-sm font-bold tracking-wide shadow-md hover:shadow-lg transition-all duration-300">
+                            Send Inquiry Now
                         </button>
                         <div id="contactFormStatus" class="mt-3 text-center text-xs font-semibold hidden"></div>
                     </form>
                 </div>
-
-                <!-- Diwali Festive Success Popup Modal -->
-                <div id="diwaliSuccessModal"
-                    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500">
-                    <div
-                        class="relative bg-gradient-to-b from-[#1e1b4b] via-[#31103f] to-[#4c0519] border-2 border-[#f59e0b] shadow-2xl rounded-3xl p-8 max-w-md w-11/12 text-center overflow-hidden transform scale-90 transition-all duration-500 id-modal-card">
-                        <!-- Sparkles & Fireworks Decoration -->
-                        <div class="absolute -top-10 -left-10 text-4xl animate-bounce">🎆</div>
-                        <div class="absolute -top-10 -right-10 text-4xl animate-bounce delay-150">✨</div>
-                        <div class="absolute -bottom-10 -left-10 text-4xl animate-pulse">💥</div>
-                        <div class="absolute -bottom-10 -right-10 text-4xl animate-pulse delay-200">🪔</div>
-
-                        <div
-                            class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#f59e0b] to-[#fbbf24] flex items-center justify-center shadow-lg shadow-amber-500/50 text-4xl animate-pulse">
-                            🪔
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-[#fde047] brand-font mb-2 tracking-wide">
-                            🎆 Happy Diwali! 🎆
-                        </h3>
-                        <h4 class="text-base font-semibold text-white mb-3">Enquiry Received Successfully!</h4>
-                        <p
-                            class="text-xs text-[#f1f5f9] leading-relaxed mb-6 bg-white/10 p-3.5 rounded-xl border border-white/10">
-                            Thank you for contacting <b>Nagercoil Crackers Mart</b>! Our team will reach out to you
-                            shortly with wholesale Diwali offers.
-                        </p>
-
-                        <button onclick="closeDiwaliSuccessModal()"
-                            class="w-full btn-gold py-3 rounded-xl text-sm font-bold tracking-wider shadow-lg hover:scale-105 transform transition-all duration-300">
-                            ✨ CELEBRATE & CLOSE ✨
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col justify-between">
-                    <div
-                        class="group bg-white hover:bg-[#0284c7] border border-[#cbd5e1] hover:border-[#0284c7] shadow-md hover:shadow-xl p-6 rounded-xl mb-4 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                        <h4
-                            class="font-bold text-[#0f172a] group-hover:text-white brand-font text-base mb-2 transition-colors">
-                            📞 Phone & WhatsApp</h4>
-                        <p class="text-sm text-[#0284c7] group-hover:text-white font-bold transition-colors">
-                            Call / WhatsApp : <a href="tel:9790454711" class="underline">+91 9790454711</a> (<a
-                                href="https://wa.me/919790454711?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                                target="_blank" rel="noopener noreferrer" class="underline">WA</a>)
-                            &nbsp;|&nbsp; <br><a href="tel:8248159490" class="underline">+91 8248159490</a> (<a
-                                href="https://wa.me/918248159490?text=Hi%20Nagercoil%20Crackers%20Mart%2C%20I%20want%20to%20inquire%20about%20Diwali%202026%20crackers"
-                                target="_blank" rel="noopener noreferrer" class="underline">WA</a>)</p>
-                    </div>
-                    <div
-                        class="group bg-white hover:bg-[#0284c7] border border-[#cbd5e1] hover:border-[#0284c7] shadow-md hover:shadow-xl p-6 rounded-xl mb-4 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                        <h4
-                            class="font-bold text-[#0f172a] group-hover:text-white brand-font text-base mb-2 transition-colors">
-                            📍 Location</h4>
-                        <p class="text-sm text-[#475569] group-hover:text-white transition-colors">Nagercoil,
-                            Kanyakumari District, Tamil Nadu</p>
-                    </div>
-                    <div
-                        class="group bg-white hover:bg-[#0284c7] border border-[#cbd5e1] hover:border-[#0284c7] shadow-md hover:shadow-xl p-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                        <h4
-                            class="font-bold text-[#0f172a] group-hover:text-white brand-font text-base mb-2 transition-colors">
-                            🏦 Bank & Payment Details</h4>
-                        <p class="text-xs text-[#475569] group-hover:text-white/90 transition-colors">Indian Overseas
-                            Bank (IOB) • A/C: <b>006301000046162</b></p>
-                        <p class="text-xs text-[#475569] group-hover:text-white/90 transition-colors mt-1">Google Pay:
-                            <b>78710 60948</b>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- Diwali Festive Success Popup Modal -->
+    <div id="diwaliSuccessModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500">
+        <div
+            class="relative bg-gradient-to-b from-[#1e1b4b] via-[#31103f] to-[#4c0519] border-2 border-[#f59e0b] shadow-2xl rounded-3xl p-8 max-w-md w-11/12 text-center overflow-hidden transform scale-90 transition-all duration-500 id-modal-card">
+            <!-- Sparkles & Fireworks Decoration -->
+            <div class="absolute -top-10 -left-10 text-4xl animate-bounce">🎆</div>
+            <div class="absolute -top-10 -right-10 text-4xl animate-bounce delay-150">✨</div>
+            <div class="absolute -bottom-10 -left-10 text-4xl animate-pulse">💥</div>
+            <div class="absolute -bottom-10 -right-10 text-4xl animate-pulse delay-200">🪔</div>
+
+            <div
+                class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#f59e0b] to-[#fbbf24] flex items-center justify-center shadow-lg shadow-amber-500/50 text-4xl animate-pulse">
+                🪔
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#fde047] brand-font mb-2 tracking-wide">
+                🎆 Happy Diwali! 🎆
+            </h3>
+            <h4 class="text-base font-semibold text-white mb-3">Enquiry Received Successfully!</h4>
+            <p class="text-xs text-[#f1f5f9] leading-relaxed mb-6 bg-white/10 p-3.5 rounded-xl border border-white/10">
+                Thank you for contacting <b>Nagercoil Crackers Mart</b>! Our team will reach out to you
+                shortly with wholesale Diwali offers.
+            </p>
+
+            <button onclick="closeDiwaliSuccessModal()"
+                class="w-full btn-gold py-3 rounded-xl text-sm font-bold tracking-wider shadow-lg hover:scale-105 transform transition-all duration-300">
+                ✨ CELEBRATE & CLOSE ✨
+            </button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#0369a1] text-white py-8 border-t border-[#0284c7]">
@@ -1174,7 +1285,8 @@
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm mb-6 px-2">
                 <a href="#home" class="hover:text-sky-200 transition-colors">Home</a>
                 <a href="#categories" class="hover:text-sky-200 transition-colors">Categories</a>
-                <a href="order.html" class="hover:text-sky-200 text-sky-100 font-semibold transition-colors">Order List</a>
+                <a href="order" class="hover:text-sky-200 text-sky-100 font-semibold transition-colors">Order
+                    List</a>
                 <a href="#about" class="hover:text-sky-200 transition-colors">About</a>
                 <a href="#contact" class="hover:text-sky-200 transition-colors">Contact</a>
             </div>
@@ -1206,7 +1318,7 @@
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <a href="order.html"
+                <a href="order"
                     class="btn-gold px-3.5 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold flex items-center gap-1.5 md:gap-2 shadow-sm hover:scale-105 transition-transform">
                     <span>View Cart & Order</span>
                     <i class="fas fa-arrow-right text-[10px] md:text-xs"></i>
@@ -1289,24 +1401,22 @@
             document.getElementById('mobile-menu').classList.toggle('active');
         }
 
-        // Sequential Contact Form Validation
+        // Sequential Contact Form Validation (Top-to-Bottom)
         const initContactFormValidation = () => {
             const form = document.getElementById('contact-form');
             if (!form) return;
 
-            const fields = {
-                name: form.querySelector('input[placeholder="Your Name"]'),
-                phone: form.querySelector('input[placeholder="Your Mobile Number"]'),
-                message: form.querySelector('textarea')
-            };
+            const nameInput = form.querySelector('input[type="text"]');
+            const phoneInput = form.querySelector('input[type="tel"]');
+            const messageInput = form.querySelector('textarea');
 
             const showError = (inputEl, message) => {
                 if (!inputEl) return;
                 inputEl.classList.add('is-invalid');
                 inputEl.style.borderColor = '#ef4444';
 
-                let errorDiv = inputEl.nextElementSibling;
-                if (!errorDiv || !errorDiv.classList.contains('invalid-feedback')) {
+                let errorDiv = inputEl.parentNode.querySelector('.invalid-feedback');
+                if (!errorDiv) {
                     errorDiv = document.createElement('div');
                     errorDiv.className = 'invalid-feedback';
                     errorDiv.style.fontSize = '0.75rem';
@@ -1323,17 +1433,17 @@
                 if (!inputEl) return;
                 inputEl.classList.remove('is-invalid');
                 inputEl.style.borderColor = '#cbd5e1';
-                let errorDiv = inputEl.nextElementSibling;
-                if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
+                let errorDiv = inputEl.parentNode.querySelector('.invalid-feedback');
+                if (errorDiv) {
                     errorDiv.style.display = 'none';
                 }
             };
 
-            Object.values(fields).forEach(inputEl => {
+            [nameInput, phoneInput, messageInput].forEach(inputEl => {
                 if (inputEl) {
                     inputEl.addEventListener('input', () => {
                         clearError(inputEl);
-                        if (inputEl === fields.phone) {
+                        if (inputEl === phoneInput) {
                             inputEl.value = inputEl.value.replace(/\D/g, '').slice(0, 10);
                         }
                     });
@@ -1343,36 +1453,36 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                Object.values(fields).forEach(inputEl => clearError(inputEl));
+                // Clear all previous errors
+                [nameInput, phoneInput, messageInput].forEach(inputEl => clearError(inputEl));
 
-                let isValid = true;
-                let firstInvalidField = null;
+                const nameVal = nameInput ? nameInput.value.trim() : '';
+                const phoneVal = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+                const messageVal = messageInput ? messageInput.value.trim() : '';
 
-                if (fields.name && fields.name.value.trim() === '') {
-                    showError(fields.name, 'Please Enter Your Full Name');
-                    isValid = false;
-                    firstInvalidField = fields.name;
-                } else if (fields.phone && fields.phone.value.trim() === '') {
-                    showError(fields.phone, 'Please Enter Your Mobile Number');
-                    isValid = false;
-                    firstInvalidField = fields.phone;
-                } else if (fields.phone && !/^[0-9]{10}$/.test(fields.phone.value.trim().replace(/\D/g, ''))) {
-                    showError(fields.phone, 'Please Enter a Valid 10-Digit Mobile Number');
-                    isValid = false;
-                    firstInvalidField = fields.phone;
-                } else if (fields.message && fields.message.value.trim() === '') {
-                    showError(fields.message, 'Please Enter Your Message or Inquiry');
-                    isValid = false;
-                    firstInvalidField = fields.message;
-                }
-
-                if (!isValid) {
-                    if (firstInvalidField) {
-                        firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        firstInvalidField.focus();
-                    }
+                // Sequential Validation: Check Field 1 (Name) -> Field 2 (Mobile Number) -> Field 3 (Message)
+                if (nameVal === '') {
+                    showError(nameInput, 'Please Enter Your Full Name');
+                    nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    nameInput.focus();
                     return;
                 }
+
+                if (phoneVal === '') {
+                    showError(phoneInput, 'Please Enter Your Mobile Number');
+                    phoneInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    phoneInput.focus();
+                    return;
+                }
+
+                if (!/^[0-9]{10}$/.test(phoneVal)) {
+                    showError(phoneInput, 'Please Enter a Valid 10-Digit Mobile Number');
+                    phoneInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    phoneInput.focus();
+                    return;
+                }
+
+
 
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const statusDiv = document.getElementById('contactFormStatus');
@@ -1389,9 +1499,9 @@
 
                 const formData = {
                     formType: 'contactEnquiry',
-                    fullName: fields.name.value.trim(),
-                    phone: fields.phone.value.trim(),
-                    message: fields.message.value.trim()
+                    fullName: nameVal,
+                    phone: phoneVal,
+                    message: messageVal
                 };
 
                 const handleSuccess = (msg) => {
@@ -1408,40 +1518,38 @@
                     form.reset();
                     showDiwaliSuccessModal();
 
+                    // Auto launch WhatsApp Message for Instant Inquiry
+                    let waMsg = `*NAGERCOIL CRACKERS MART - INSTANT INQUIRY*\n`;
+                    waMsg += `-------------------------------------\n`;
+                    waMsg += `*Name:* ${nameVal}\n`;
+                    waMsg += `*Mobile:* ${phoneVal}\n`;
+                    if (messageVal) waMsg += `*Inquiry:* ${messageVal}\n`;
+                    waMsg += `-------------------------------------\n`;
+                    waMsg += `*Diwali 2026 Wholesale Inquiry*`;
+
+                    const waUrl = `https://wa.me/918248159490?text=${encodeURIComponent(waMsg)}`;
+                    window.open(waUrl, '_blank');
+
                     setTimeout(() => {
                         if (submitBtn) {
                             submitBtn.style.backgroundColor = '';
                             submitBtn.style.color = '';
                             submitBtn.disabled = false;
-                            submitBtn.innerHTML = 'Send Message';
+                            submitBtn.innerHTML = 'Send Inquiry Now';
                         }
                     }, 4000);
                 };
 
+                // Immediately trigger instant UI feedback and launch WhatsApp for zero-delay UX
+                handleSuccess('Thank you for contacting Nagercoil Crackers Mart! Your enquiry has been received successfully.');
+
+                // Dispatch email request in background
                 fetch('php/send-mail.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    keepalive: true,
                     body: JSON.stringify(formData)
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            handleSuccess(data.message);
-                        } else {
-                            if (statusDiv) {
-                                statusDiv.className = 'mt-3 text-center text-xs font-semibold text-rose-600';
-                                statusDiv.textContent = data.message || 'Failed to send enquiry.';
-                            }
-                            if (submitBtn) {
-                                submitBtn.disabled = false;
-                                submitBtn.innerHTML = 'Send Message';
-                            }
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        handleSuccess('Thank you for contacting Nagercoil Crackers Mart! Your enquiry has been received successfully.');
-                    });
+                }).catch(err => console.error('Background mailer error:', err));
             });
         };
 

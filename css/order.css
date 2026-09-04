@@ -150,23 +150,116 @@ h1.brand {
 .hero-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
+  align-items: center;
+  margin-top: 12px;
 }
 
-.pill {
-  font-size: 12.5px;
-  padding: 6px 14px;
-  border: 1px solid var(--line);
+.pill-badge {
+  font-size: 13px;
+  padding: 8px 18px;
   border-radius: 99px;
-  background: var(--panel);
+  background: #ffffff;
   color: var(--ink-dim);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
 }
 
-.pill b {
-  color: var(--maroon);
-  font-weight: 600;
+.pill-badge:hover {
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.15);
+  border-color: #0284c7;
+}
+
+.pill-booking i,
+.pill-delivery i {
+  color: #0284c7;
+  font-size: 14px;
+}
+
+.pill-booking b {
+  color: #0369a1;
+}
+
+.pill-delivery b {
+  color: #0284c7;
+}
+
+.pill-contact-group {
+  background: #ffffff;
+  border: 1px solid #0284c7;
+  padding: 6px 16px;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12);
+}
+
+.pill-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pill-title i {
+  color: #d97706;
+}
+
+.contact-sub-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.num-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.divider {
+  color: #cbd5e1;
+  font-weight: 300;
+}
+
+.act-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.btn-call {
+  background: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.btn-call:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.btn-wa {
+  background: #ecfdf5;
+  color: #15803d;
+  border: 1px solid #a7f3d0;
+}
+
+.btn-wa:hover {
+  background: #25D366;
+  color: #ffffff;
+  border-color: #25D366;
 }
 
 /* ---------- Controls bar ---------- */
@@ -573,12 +666,15 @@ main {
 }
 
 .qty-stepper button.inc {
-  background: var(--maroon);
+  background: #0284c7;
   color: #fff;
+  transition: all 0.25s ease;
 }
 
 .qty-stepper button.inc:hover {
-  background: var(--maroon-deep);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
 }
 
 .qty-stepper .qty-val {
@@ -658,21 +754,100 @@ main {
 
 footer.contact {
   text-align: center;
-  padding: 28px 10px 12px;
+  padding: 30px 16px 20px;
   color: var(--ink-dim);
   font-size: 13.5px;
 }
 
-footer.contact .num {
-  color: var(--maroon);
-  font-weight: 600;
+.footer-contact-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
+}
+
+.footer-tagline {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.footer-num-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.num-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.btn-pair {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.footer-btn.btn-call {
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+}
+
+.footer-btn.btn-call:hover {
+  background: #0369a1;
+}
+
+.footer-btn.btn-wa {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.footer-btn.btn-wa:hover {
+  background: #16a34a;
 }
 
 footer.contact .signoff {
   font-family: 'Cinzel', serif;
-  color: var(--ember);
-  font-size: 16px;
-  margin-top: 10px;
+  color: #d97706;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
 }
 
 /* ---------- Cart bar ---------- */

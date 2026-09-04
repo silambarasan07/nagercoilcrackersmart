@@ -228,7 +228,9 @@
         ["King Rider Bomb", "10 Pcs", 1300, 295],
       ]],
       ["Enjoy Funjoy", [
-        ["Mickey Mouse", "1 Pcs", 3750, 775],
+        ["Mickey (short rage wala under 5k )", "1 Pcs", 3750, 950],
+        ["Mouse (Long range wala 5k)", "1 Pcs", 7500, 2250],
+        ["Wild Force (10000 wala)", "1 Pcs", 14950, 4550],
       ]],
       ["Sky Shot Items", [
         ["Mini Sky Shot", "5 Pcs", 375, 110],
@@ -480,136 +482,138 @@
       "p64": "assets/Bombs/King Bomb (10 Pcs).webp",
       "p65": "assets/Bombs/Classic - Tracer Bomb (10 Pcs).jpg",
       "p66": "assets/Bombs/King Rider Bomb (10 Pcs).jpg",
-      "p67": "assets/Enjoy Funjoy/Mickey Mouse.webp",
-      "p68": "assets/Sky Shot Items/Mini Sky Shot (5 Pcs).jpg",
-      "p69": "assets/Sky Shot Items/7 Shots (5 Pcs).jpg",
-      "p70": "assets/Sky Shot Items/Penta Sky Shot (5 Pcs).jpg",
-      "p71": "assets/Sky Shot Items/3 Up (5 Pcs).jpg",
-      "p72": "assets/Vanitha Brand Sky Shots/Chip Mix (2 Pcs).webp",
-      "p73": "assets/Vanitha Brand Sky Shots/Lazer Show (6 Pcs).jpeg",
-      "p74": "assets/Vanitha Brand Sky Shots/Miracle (4 Pcs).jpg",
-      "p75": "assets/Vanitha Brand Sky Shots/Gelly (18 Pcs).webp",
-      "p76": "assets/Vanitha Brand Sky Shots/Fly Machine (10 Pcs).webp",
-      "p77": "assets/Vanitha Brand Sky Shots/Rising Effect (6 Pcs).png",
-      "p78": "assets/Fancy Pipe Out/1 1-4- Fancy Pipe (1 Pcs).jpeg",
-      "p79": "assets/Fancy Pipe Out/2-Fancy Pipe (1 Pcs).jpg",
-      "p80": "assets/Fancy Pipe Out/2-Fancy Pipe (Premium) (3 Pcs).jpeg",
-      "p81": "assets/Fancy Pipe Out/3 1-2 Fancy Pipe (Economy).jpg",
-      "p82": "assets/Fancy Pipe Out/4- Fancy Pipe (Premium).jpg",
-      "p83": "assets/Fancy Pipe Out/3 1-2- Special Pipe (Niagra -Sizzling).jpeg",
-      "p84": "assets/Fancy Pipe Out/3 1-2- Double Ball Pipe.jpg",
-      "p85": "assets/Ultra Premium Fancy Pipe Out/Wow Lemon.jpeg",
-      "p86": "assets/Ultra Premium Fancy Pipe Out/Wow Pink-Purple.jpg",
-      "p87": "assets/Ultra Premium Fancy Pipe Out/Pink Out (Vanitha Brand).jpeg",
-      "p88": "assets/Ultra Premium Fancy Pipe Out/Purple Rain Out (Vanitha Brand).webp",
-      "p89": "assets/Ultra Premium Fancy Pipe Out/Jungle Party (Vanitha Brand).jpg",
-      "p90": "assets/Ultra Premium Fancy Pipe Out/Orange Out (Vanitha Brand).png",
-      "p91": "assets/Ultra Premium Fancy Pipe Out/Sky Copter.png",
-      "p92": "assets/Ultra Premium Fancy Pipe Out/Green Leaf Out (Vanitha Brand).png",
-      "p93": "assets/Ultra Premium Fancy Pipe Out/City Out (Vanitha Brand).jpg",
-      "p94": "assets/Ultra Premium Fancy Pipe Out/4-Jumbo Shooter (2 Pcs).webp",
-      "p95": "assets/Repeating Multi Colour Shots/30 Shot Multi Colour.jpeg",
-      "p96": "assets/Repeating Multi Colour Shots/60 Shot Multi Colour.jpg",
-      "p97": "assets/Repeating Multi Colour Shots/120 Shot Multi Colour.jpg",
-      "p98": "assets/Repeating Multi Colour Shots/240 Shot Multi Colour.jpg",
-      "p99": "assets/Premium Repeating Multi Colour Shots/30 Shot Multi Colour (Premium).webp",
-      "p100": "assets/Premium Repeating Multi Colour Shots/60 Shot Multi Colour (Premium).png",
-      "p101": "assets/Premium Repeating Multi Colour Shots/120 Shot Multi Colour (Premium).webp",
-      "p102": "assets/Premium Repeating Multi Colour Shots/240 Shot Multi Colour (Premium).jpg",
-      "p103": "assets/Elite Multi Series/eyeinthesky-big-500x500.webp",
-      "p104": "assets/Elite Multi Series/Sonny Sweet 16 Whistle.jpg",
-      "p105": "assets/Repeating Rider & Crackling Shots/12 Shot Rider.jpg",
-      "p106": "assets/Repeating Rider & Crackling Shots/12 Shot Colour Sizzling Rider.jpeg",
-      "p107": "assets/New Fancy Fountains/Hip Hop.jpg",
-      "p108": "assets/New Fancy Fountains/Tom & Jerry.jpg",
-      "p109": "assets/New Fancy Fountains/Wow.jpeg",
-      "p110": "assets/New Fancy Fountains/Falls.jpg",
-      "p111": "assets/New Fancy Fountains/Hi-Coo.jpg",
-      "p112": "assets/Siren & Crackling Fountains/Mini Siren Fountain (5 Pcs).webp",
-      "p113": "assets/Siren & Crackling Fountains/Mega Siren Fountain (5 Pcs).jpg",
-      "p114": "assets/Siren & Crackling Fountains/Sing Pop -Fire Splendor.jpg",
-      "p115": "assets/Siren & Crackling Fountains/100 K Crackling Fountain.jpeg",
-      "p116": "assets/Siren & Crackling Fountains/Wonder Mix.webp",
-      "p117": "assets/dodo.png",
-      "p118": "assets/Vanitha Kids Galatta/Hai Hai (3 Pcs).webp",
-      "p119": "assets/Vanitha Kids Galatta/Dragon Fly (5 Pcs).jpeg",
-      "p120": "assets/Vanitha Kids Galatta/Crystal (3 Pcs).jpg",
-      "p121": "assets/Vanitha Kids Galatta/Rope Colour (4 Pcs).jpg",
-      "p122": "assets/Vanitha Kids Galatta/Cosmic Force (3 Pcs).webp",
-      "p123": "assets/Haloween.png",
-      "p124": "assets/Vanitha Kids Galatta/Golden Lion.jpg",
-      "p125": "assets/Vanitha Kids Galatta/Hot Wheels (5 Pcs).webp",
-      "p126": "assets/Vanitha Kids Galatta/Autograph (2 Pcs).jpg",
-      "p127": "assets/Vanitha Kids Galatta/Tiny Gun (6 Pcs).jpg",
-      "p128": "assets/Vanitha Kids Galatta/Bubble (2 Pcs).jpg",
-      "p129": "assets/Vanitha Kids Galatta/Lotto (3 Pcs).png",
-      "p130": "assets/Kids Fountains/Pogo -Holi Fountain.jpeg",
-      "p131": "assets/Kids Fountains/Angry Bird Fountain.jpeg",
-      "p132": "assets/Kids Fountains/Rock Star -Star War Fountain.jpg",
-      "p133": "assets/Kids Fountains/4- Fountain Mix - High Voltage.jpg",
-      "p134": "assets/Kids Fountains/Lemon Tree Fountain.jpg",
-      "p135": "assets/Kids Fountains/Dragon Fruit Mix - Motupatlu Mix Fountain.webp",
-      "p136": "assets/Night Wonder Attractions/Croods Mix Fountain (Double Wonder).jpeg",
-      "p137": "assets/Night Wonder Attractions/Helicopter (5 Pcs).jpg",
-      "p138": "assets/Night Wonder Attractions/Drone (5 Pcs).jpg",
-      "p139": "assets/Night Wonder Attractions/Lotus Wheel - 4x4 Wheel (5 Pcs).jpg",
-      "p140": "assets/Night Wonder Attractions/Pinky Panky.webp",
-      "p141": "assets/Night Wonder Attractions/Top Gun (5 Pcs).jpg",
-      "p142": "assets/Night Wonder Attractions/Bada Peacock Shower.webp",
-      "p143": "assets/Magic Candles/King Candle.jpg",
-      "p144": "assets/Magic Candles/Queen-Candle-Silver.webp",
-      "p145": "assets/Magical Items/Dancing Butterfly (10 Pcs).jpg",
-      "p146": "assets/Magical Items/Peacock Feather (5 Pcs).jpg",
-      "p147": "assets/Magical Items/lephant Shower (5 Pcs).jpg",
-      "p148": "assets/Magical Items/Photo Flash (5 Pcs).webp",
-      "p149": "assets/Magical Items/Golden Drops (5 Pcs).jpg",
-      "p150": "assets/New Fancy Candles/Crocodile -Shark Candle.jpg",
-      "p151": "assets/New Fancy Candles/Sea Horse Candle.jpg",
-      "p152": "assets/New Fancy Candles/Ultra Pencil (3 Pcs).jpg",
-      "p153": "assets/Colour Smoke & Paper Sky Shots/Colour Smoke Candle (3 Pcs).jpg",
-      "p154": "assets/Colour Smoke & Paper Sky Shots/Colour Smoke Sparklers (10 Pcs).jpg",
-      "p155": "assets/Colour Smoke & Paper Sky Shots/Magic Money Show (2 Pcs).jpg",
-      "p156": "assets/Colour Smoke & Paper Sky Shots/Party Zone.webp",
-      "p157": "assets/Vip Special Items/Tin Beer Fountain.webp",
-      "p158": "assets/Vip Special Items/Peacock Shower.png",
-      "p159": "assets/Vip Special Items/5G (Multi Colour).webp",
-      "p160": "assets/Vip Special Items/Pappu Shower.jpg",
-      "p161": "assets/Vip Special Items/Angry Birds (Whistle) (5 Pcs).jpg",
-      "p162": "assets/Vip Special Items/Cute Repeating 6 Colour Fountain.jpg",
-      "p163": "assets/Vip Special Items/Holi Fruits (2 Pcs).png",
-      "p164": "assets/Vip Special Items/Chakkar Celebration (4 Pcs).jpeg",
-      "p165": "assets/Kids Dhamaka/Snacks Series Fountain (5 Pcs).jpeg",
-      "p166": "assets/Kids Dhamaka/Panchamirtham Fountain (5 Pcs).webp",
-      "p167": "assets/Kids Dhamaka/Redsun Mix Fountain (5 Pcs).png",
-      "p168": "assets/Kids Dhamaka/Sunfeast Mix Fountain (5 Pcs).webp",
-      "p169": "assets/Paper Blast/Paper Blast - I.jpg",
-      "p170": "assets/Paper Blast/Paper Blast - II.jpeg",
-      "p171": "assets/Paper Blast/Paper Blast - III.webp",
-      "p172": "assets/Paper Blast/Colour Paper Blast.jpeg",
-      "p173": "assets/Paper Blast/Avatar Paper Blast (10 Pcs).webp",
-      "p174": "assets/Digital Crackling Attractions/Alert Lar (Wala).jpg",
-      "p175": "assets/Digital Crackling Attractions/1000 Rider (5 Pcs).png",
-      "p176": "assets/Digital Crackling Attractions/90 Watts (3 Pcs).jpg",
-      "p177": "assets/Day Wonder Attractions/Old is Gold (Olla Pattas) (20-25 Pcs).jpeg",
-      "p178": "assets/Day Wonder Attractions/Money Bank - Bouncer.jpg",
-      "p179": "assets/Day Wonder Attractions/Cylinder Smoke Boom.jpg",
-      "p180": "assets/Mud Flower Pots/Mini Pearl (5 Pcs).jpg",
-      "p181": "assets/Mud Flower Pots/Tim Tim (5 Pcs).webp",
-      "p182": "assets/Mud Flower Pots/Little Star (10 Pcs).jpg",
-      "p183": "assets/Mud Flower Pots/2 in 1 (10 Pcs).jpg",
-      "p184": "assets/Mud Flower Pots/Colour Changing (5 Pcs).jpeg",
-      "p185": "assets/Mud Flower Pots/Gift Pack (4 Pcs).webp",
-      "p186": "assets/Mud Flower Pots/Deluxe Mansatti (4 Pcs).png",
-      "p187": "assets/New Arrivals (2026)/Barbie Sky (4 Pcs).jpg",
-      "p188": "assets/New Arrivals (2026)/Cracker Samosa (4 Pcs).jpg",
-      "p189": "assets/New Arrivals (2026)/Race Car (2 Pcs).jpeg",
-      "p190": "assets/New Arrivals (2026)/ce Cone (2 Pcs).webp",
-      "p191": "assets/Gift Box/Gift Box 20 Item.jpg",
-      "p192": "assets/Gift Box/Gift Box 25 Item.webp",
-      "p193": "assets/Gift Box/Gift Box 30 Item.png",
-      "p194": "assets/Gift Box/Gift Box 40 Item.webp",
-      "p195": "assets/Gift Box/Gift Box 50 Item.jpg",
-      "p196": "assets/Gift Box/Gift Box 60 Item.jpg"
+      "p67": "assets/Enjoy Funjoy/Mickey (short rage wala under 5k ) (1 Pcs).jpg",
+      "p68": "assets/Enjoy Funjoy/Mouse (Long range wala 5k) (1 Pcs).webp",
+      "p69": "assets/Enjoy Funjoy/Wild Force (10000 wala) (1 Pcs).jpg",
+      "p70": "assets/Sky Shot Items/Mini Sky Shot (5 Pcs).jpg",
+      "p71": "assets/Sky Shot Items/7 Shots (5 Pcs).jpg",
+      "p72": "assets/Sky Shot Items/Penta Sky Shot (5 Pcs).jpg",
+      "p73": "assets/Sky Shot Items/3 Up (5 Pcs).jpg",
+      "p74": "assets/Vanitha Brand Sky Shots/Chip Mix (2 Pcs).webp",
+      "p75": "assets/Vanitha Brand Sky Shots/Lazer Show (6 Pcs).jpeg",
+      "p76": "assets/Vanitha Brand Sky Shots/Miracle (4 Pcs).jpg",
+      "p77": "assets/Vanitha Brand Sky Shots/Gelly (18 Pcs).webp",
+      "p78": "assets/Vanitha Brand Sky Shots/Fly Machine (10 Pcs).webp",
+      "p79": "assets/Vanitha Brand Sky Shots/Rising Effect (6 Pcs).png",
+      "p80": "assets/Fancy Pipe Out/1 1-4- Fancy Pipe (1 Pcs).jpeg",
+      "p81": "assets/Fancy Pipe Out/2-Fancy Pipe (1 Pcs).jpg",
+      "p82": "assets/Fancy Pipe Out/2-Fancy Pipe (Premium) (3 Pcs).jpeg",
+      "p83": "assets/Fancy Pipe Out/3 1-2 Fancy Pipe (Economy).jpg",
+      "p84": "assets/Fancy Pipe Out/4- Fancy Pipe (Premium).jpg",
+      "p85": "assets/Fancy Pipe Out/3 1-2- Special Pipe (Niagra -Sizzling).jpeg",
+      "p86": "assets/Fancy Pipe Out/3 1-2- Double Ball Pipe.jpg",
+      "p87": "assets/Ultra Premium Fancy Pipe Out/Wow Lemon.jpeg",
+      "p88": "assets/Ultra Premium Fancy Pipe Out/Wow Pink-Purple.jpg",
+      "p89": "assets/Ultra Premium Fancy Pipe Out/Pink Out (Vanitha Brand).jpeg",
+      "p90": "assets/Ultra Premium Fancy Pipe Out/Purple Rain Out (Vanitha Brand).webp",
+      "p91": "assets/Ultra Premium Fancy Pipe Out/Jungle Party (Vanitha Brand).jpg",
+      "p92": "assets/Ultra Premium Fancy Pipe Out/Orange Out (Vanitha Brand).png",
+      "p93": "assets/Ultra Premium Fancy Pipe Out/Sky Copter.png",
+      "p94": "assets/Ultra Premium Fancy Pipe Out/Green Leaf Out (Vanitha Brand).png",
+      "p95": "assets/Ultra Premium Fancy Pipe Out/City Out (Vanitha Brand).jpg",
+      "p96": "assets/Ultra Premium Fancy Pipe Out/4-Jumbo Shooter (2 Pcs).webp",
+      "p97": "assets/Repeating Multi Colour Shots/30 Shot Multi Colour.jpeg",
+      "p98": "assets/Repeating Multi Colour Shots/60 Shot Multi Colour.jpg",
+      "p99": "assets/Repeating Multi Colour Shots/120 Shot Multi Colour.jpg",
+      "p100": "assets/Repeating Multi Colour Shots/240 Shot Multi Colour.jpg",
+      "p101": "assets/Premium Repeating Multi Colour Shots/30 Shot Multi Colour (Premium).webp",
+      "p102": "assets/Premium Repeating Multi Colour Shots/60 Shot Multi Colour (Premium).png",
+      "p103": "assets/Premium Repeating Multi Colour Shots/120 Shot Multi Colour (Premium).webp",
+      "p104": "assets/Premium Repeating Multi Colour Shots/240 Shot Multi Colour (Premium).jpg",
+      "p105": "assets/Elite Multi Series/eyeinthesky-big-500x500.webp",
+      "p106": "assets/Elite Multi Series/Sonny Sweet 16 Whistle.jpg",
+      "p107": "assets/Repeating Rider & Crackling Shots/12 Shot Rider.jpg",
+      "p108": "assets/Repeating Rider & Crackling Shots/12 Shot Colour Sizzling Rider.jpeg",
+      "p109": "assets/New Fancy Fountains/Hip Hop.jpg",
+      "p110": "assets/New Fancy Fountains/Tom & Jerry.jpg",
+      "p111": "assets/New Fancy Fountains/Wow.jpeg",
+      "p112": "assets/New Fancy Fountains/Falls.jpg",
+      "p113": "assets/New Fancy Fountains/Hi-Coo.jpg",
+      "p114": "assets/Siren & Crackling Fountains/Mini Siren Fountain (5 Pcs).webp",
+      "p115": "assets/Siren & Crackling Fountains/Mega Siren Fountain (5 Pcs).jpg",
+      "p116": "assets/Siren & Crackling Fountains/Sing Pop -Fire Splendor.jpg",
+      "p117": "assets/Siren & Crackling Fountains/100 K Crackling Fountain.jpeg",
+      "p118": "assets/Siren & Crackling Fountains/Wonder Mix.webp",
+      "p119": "assets/dodo.png",
+      "p120": "assets/Vanitha Kids Galatta/Hai Hai (3 Pcs).webp",
+      "p121": "assets/Vanitha Kids Galatta/Dragon Fly (5 Pcs).jpeg",
+      "p122": "assets/Vanitha Kids Galatta/Crystal (3 Pcs).jpg",
+      "p123": "assets/Vanitha Kids Galatta/Rope Colour (4 Pcs).jpg",
+      "p124": "assets/Vanitha Kids Galatta/Cosmic Force (3 Pcs).webp",
+      "p125": "assets/Haloween.png",
+      "p126": "assets/Vanitha Kids Galatta/Golden Lion.jpg",
+      "p127": "assets/Vanitha Kids Galatta/Hot Wheels (5 Pcs).webp",
+      "p128": "assets/Vanitha Kids Galatta/Autograph (2 Pcs).jpg",
+      "p129": "assets/Vanitha Kids Galatta/Tiny Gun (6 Pcs).jpg",
+      "p130": "assets/Vanitha Kids Galatta/Bubble (2 Pcs).jpg",
+      "p131": "assets/Vanitha Kids Galatta/Lotto (3 Pcs).png",
+      "p132": "assets/Kids Fountains/Pogo -Holi Fountain.jpeg",
+      "p133": "assets/Kids Fountains/Angry Bird Fountain.jpeg",
+      "p134": "assets/Kids Fountains/Rock Star -Star War Fountain.jpg",
+      "p135": "assets/Kids Fountains/4- Fountain Mix - High Voltage.jpg",
+      "p136": "assets/Kids Fountains/Lemon Tree Fountain.jpg",
+      "p137": "assets/Kids Fountains/Dragon Fruit Mix - Motupatlu Mix Fountain.webp",
+      "p138": "assets/Night Wonder Attractions/Croods Mix Fountain (Double Wonder).jpeg",
+      "p139": "assets/Night Wonder Attractions/Helicopter (5 Pcs).jpg",
+      "p140": "assets/Night Wonder Attractions/Drone (5 Pcs).jpg",
+      "p141": "assets/Night Wonder Attractions/Lotus Wheel - 4x4 Wheel (5 Pcs).jpg",
+      "p142": "assets/Night Wonder Attractions/Pinky Panky.webp",
+      "p143": "assets/Night Wonder Attractions/Top Gun (5 Pcs).jpg",
+      "p144": "assets/Night Wonder Attractions/Bada Peacock Shower.webp",
+      "p145": "assets/Magic Candles/King Candle.jpg",
+      "p146": "assets/Magic Candles/Queen-Candle-Silver.webp",
+      "p147": "assets/Magical Items/Dancing Butterfly (10 Pcs).jpg",
+      "p148": "assets/Magical Items/Peacock Feather (5 Pcs).jpg",
+      "p149": "assets/Magical Items/lephant Shower (5 Pcs).jpg",
+      "p150": "assets/Magical Items/Photo Flash (5 Pcs).webp",
+      "p151": "assets/Magical Items/Golden Drops (5 Pcs).jpg",
+      "p152": "assets/New Fancy Candles/Crocodile -Shark Candle.jpg",
+      "p153": "assets/New Fancy Candles/Sea Horse Candle.jpg",
+      "p154": "assets/New Fancy Candles/Ultra Pencil (3 Pcs).jpg",
+      "p155": "assets/Colour Smoke & Paper Sky Shots/Colour Smoke Candle (3 Pcs).jpg",
+      "p156": "assets/Colour Smoke & Paper Sky Shots/Colour Smoke Sparklers (10 Pcs).jpg",
+      "p157": "assets/Colour Smoke & Paper Sky Shots/Magic Money Show (2 Pcs).jpg",
+      "p158": "assets/Colour Smoke & Paper Sky Shots/Party Zone.webp",
+      "p159": "assets/Vip Special Items/Tin Beer Fountain.webp",
+      "p160": "assets/Vip Special Items/Peacock Shower.png",
+      "p161": "assets/Vip Special Items/5G (Multi Colour).webp",
+      "p162": "assets/Vip Special Items/Pappu Shower.jpg",
+      "p163": "assets/Vip Special Items/Angry Birds (Whistle) (5 Pcs).jpg",
+      "p164": "assets/Vip Special Items/Cute Repeating 6 Colour Fountain.jpg",
+      "p165": "assets/Vip Special Items/Holi Fruits (2 Pcs).png",
+      "p166": "assets/Vip Special Items/Chakkar Celebration (4 Pcs).jpeg",
+      "p167": "assets/Kids Dhamaka/Snacks Series Fountain (5 Pcs).jpeg",
+      "p168": "assets/Kids Dhamaka/Panchamirtham Fountain (5 Pcs).webp",
+      "p169": "assets/Kids Dhamaka/Redsun Mix Fountain (5 Pcs).png",
+      "p170": "assets/Kids Dhamaka/Sunfeast Mix Fountain (5 Pcs).webp",
+      "p171": "assets/Paper Blast/Paper Blast - I.jpg",
+      "p172": "assets/Paper Blast/Paper Blast - II.jpeg",
+      "p173": "assets/Paper Blast/Paper Blast - III.webp",
+      "p174": "assets/Paper Blast/Colour Paper Blast.jpeg",
+      "p175": "assets/Paper Blast/Avatar Paper Blast (10 Pcs).webp",
+      "p176": "assets/Digital Crackling Attractions/Alert Lar (Wala).jpg",
+      "p177": "assets/Digital Crackling Attractions/1000 Rider (5 Pcs).png",
+      "p178": "assets/Digital Crackling Attractions/90 Watts (3 Pcs).jpg",
+      "p179": "assets/Day Wonder Attractions/Old is Gold (Olla Pattas) (20-25 Pcs).jpeg",
+      "p180": "assets/Day Wonder Attractions/Money Bank - Bouncer.jpg",
+      "p181": "assets/Day Wonder Attractions/Cylinder Smoke Boom.jpg",
+      "p182": "assets/Mud Flower Pots/Mini Pearl (5 Pcs).jpg",
+      "p183": "assets/Mud Flower Pots/Tim Tim (5 Pcs).webp",
+      "p184": "assets/Mud Flower Pots/Little Star (10 Pcs).jpg",
+      "p185": "assets/Mud Flower Pots/2 in 1 (10 Pcs).jpg",
+      "p186": "assets/Mud Flower Pots/Colour Changing (5 Pcs).jpeg",
+      "p187": "assets/Mud Flower Pots/Gift Pack (4 Pcs).webp",
+      "p188": "assets/Mud Flower Pots/Deluxe Mansatti (4 Pcs).png",
+      "p189": "assets/New Arrivals (2026)/Barbie Sky (4 Pcs).jpg",
+      "p190": "assets/New Arrivals (2026)/Cracker Samosa (4 Pcs).jpg",
+      "p191": "assets/New Arrivals (2026)/Race Car (2 Pcs).jpeg",
+      "p192": "assets/New Arrivals (2026)/ce Cone (2 Pcs).webp",
+      "p193": "assets/Gift Box/Gift Box 20 Item.jpg",
+      "p194": "assets/Gift Box/Gift Box 25 Item.webp",
+      "p195": "assets/Gift Box/Gift Box 30 Item.png",
+      "p196": "assets/Gift Box/Gift Box 40 Item.webp",
+      "p197": "assets/Gift Box/Gift Box 50 Item.jpg",
+      "p198": "assets/Gift Box/Gift Box 60 Item.jpg"
     };
 
     // Flatten CATALOG with unique IDs
@@ -631,8 +635,23 @@
     }));
 
     function getImgPath(id) {
-      if (PRODUCT_IMAGES[id]) return PRODUCT_IMAGES[id];
       const m = itemMeta[id];
+      if (m) {
+        if (m.cat === 'Gift Box') {
+          if (m.name.includes('20')) return 'assets/Gift Box/Gift Box 20 Item.jpg';
+          if (m.name.includes('25')) return 'assets/Gift Box/Gift Box 25 Item.webp';
+          if (m.name.includes('30')) return 'assets/Gift Box/Gift Box 30 Item.png';
+          if (m.name.includes('40')) return 'assets/Gift Box/Gift Box 40 Item.webp';
+          if (m.name.includes('50')) return 'assets/Gift Box/Gift Box 50 Item.jpg';
+          if (m.name.includes('60')) return 'assets/Gift Box/Gift Box 60 Item.jpg';
+        }
+        if (m.cat.toLowerCase().includes('funjoy')) {
+          if (m.name.includes('Mickey')) return 'assets/Enjoy Funjoy/Mickey (short rage wala under 5k ) (1 Pcs).jpg';
+          if (m.name.includes('Mouse')) return 'assets/Enjoy Funjoy/Mouse (Long range wala 5k) (1 Pcs).webp';
+          if (m.name.includes('Wild Force')) return 'assets/Enjoy Funjoy/Wild Force (10000 wala) (1 Pcs).jpg';
+        }
+      }
+      if (PRODUCT_IMAGES[id]) return PRODUCT_IMAGES[id];
       if (m) {
         const catLower = m.cat.toLowerCase();
         if (catLower.includes('flower pot')) return 'assets/crackers-imgs/Flower Pots.jpg';
@@ -1088,18 +1107,18 @@
       const { offerTotal, packing, grand } = calcCartTotals();
       const ids = Object.keys(cart);
 
-      let msg = `✨ *NAGERCOIL CRACKERS MART* ✨\n`;
-      msg += `🎆 *DIWALI 2026 ORDER INVOICE* 🎆\n`;
-      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-      msg += `👤 *Customer Details*\n`;
-      msg += `• *Name:* ${name}\n`;
-      msg += `• *Mobile:* ${mobile}\n`;
-      msg += `• *WhatsApp:* ${whatsapp}\n`;
-      if (email) msg += `• *Email:* ${email}\n`;
-      msg += `• *Address:* ${address}, ${city} - ${pincode}, ${state}\n`;
-      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-      msg += `📦 *ORDER ITEMS TABLE*\n`;
-      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      let msg = `*NAGERCOIL CRACKERS MART*\n`;
+      msg += `*DIWALI 2026 ORDER INVOICE*\n`;
+      msg += `-------------------------------------\n`;
+      msg += `*Customer Details*\n`;
+      msg += `*Name:* ${name}\n`;
+      msg += `*Mobile:* ${mobile}\n`;
+      msg += `*WhatsApp:* ${whatsapp}\n`;
+      if (email) msg += `*Email:* ${email}\n`;
+      msg += `*Address:* ${address}, ${city} - ${pincode}, ${state}\n`;
+      msg += `-------------------------------------\n`;
+      msg += `*ORDER ITEMS*\n`;
+      msg += `-------------------------------------\n`;
 
       ids.forEach((id, idx) => {
         const m = itemMeta[id];
@@ -1107,15 +1126,15 @@
         const line = m.offer * qty;
         const itemName = `${m.name}${m.pack ? ` (${m.pack})` : ''}`;
         msg += `${idx + 1}. *${itemName}*\n`;
-        msg += `   └─ Qty: ${qty} x ₹${m.offer.toLocaleString('en-IN')} = *₹${line.toLocaleString('en-IN')}*\n`;
+        msg += `   > Qty: ${qty} x Rs.${m.offer.toLocaleString('en-IN')} = *Rs.${line.toLocaleString('en-IN')}*\n`;
       });
 
-      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-      msg += `💵 *Sub Total:* ₹${offerTotal.toLocaleString('en-IN')}\n`;
-      msg += `📦 *Packing Fee:* ₹${packing}\n`;
-      msg += `💰 *GRAND TOTAL:* *₹${grand.toLocaleString('en-IN')}*\n`;
-      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-      msg += `🙏 *Thank you for ordering with Nagercoil Crackers Mart! Please confirm availability & delivery.* 🪔`;
+      msg += `-------------------------------------\n`;
+      msg += `*Sub Total:* Rs.${offerTotal.toLocaleString('en-IN')}\n`;
+      msg += `*Packing Fee:* Rs.${packing}\n`;
+      msg += `*GRAND TOTAL:* *Rs.${grand.toLocaleString('en-IN')}*\n`;
+      msg += `-------------------------------------\n`;
+      msg += `*Thank you for ordering with Nagercoil Crackers Mart! Please confirm availability & delivery.*`;
 
       // Generate invoice payload for localStorage
       const invoiceNo = `NCM-2026-${Math.floor(100000 + Math.random() * 900000)}`;
@@ -1174,13 +1193,23 @@
         console.error("Cart clear error:", e);
       }
 
-      // Launch WhatsApp message
+      // Launch WhatsApp message in new tab/window
       const waUrl = `https://wa.me/918248159490?text=${encodeURIComponent(msg)}`;
-      window.open(waUrl, '_blank');
-
-      // Redirect to printable Invoice page
+      
       closeCheckoutModal();
-      window.location.href = 'invoice.html';
+
+      // Launch WhatsApp in a new tab
+      const waWin = window.open(waUrl, '_blank');
+
+      if (waWin) {
+        // Redirect current tab to printable Invoice page after WhatsApp tab opens
+        setTimeout(() => {
+          window.location.href = 'invoice';
+        }, 1500);
+      } else {
+        // Fallback: If popup blocker prevents opening a new tab, navigate directly to WhatsApp
+        window.location.href = waUrl;
+      }
     }
 
     /* ---------- Lightbox Modal ---------- */

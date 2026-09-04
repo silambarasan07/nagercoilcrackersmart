@@ -173,9 +173,11 @@ try {
         $phone = trim($input['phone'] ?? '');
         $message = trim($input['message'] ?? '');
 
-        if ($fullName === '' || $phone === '' || $message === '') {
+        if ($fullName === '' || $phone === '') {
             throw new Exception('Required contact fields missing.');
         }
+
+        $displayMessage = $message !== '' ? htmlspecialchars($message) : 'N/A (No specific message entered)';
 
         $mail->Subject = "Nagercoil Crackers Mart Enquiry - {$fullName}";
         $mail->Body = "
@@ -187,7 +189,7 @@ try {
                 </tr>
                 <tr><td style='padding: 10px;'><strong>Full Name</strong></td><td style='padding: 10px;'>{$fullName}</td></tr>
                 <tr><td style='padding: 10px;'><strong>Phone / Mobile</strong></td><td style='padding: 10px;'>{$phone}</td></tr>
-                <tr><td style='padding: 10px;'><strong>Message</strong></td><td style='padding: 10px;'>" . nl2br(htmlspecialchars($message)) . "</td></tr>
+                <tr><td style='padding: 10px;'><strong>Message</strong></td><td style='padding: 10px;'>" . nl2br($displayMessage) . "</td></tr>
                 <tr>
                     <td colspan='2' style='padding: 10px; font-size: 11px; color: #64748b; background-color: #f8fafc;'>
                         Submitted on: {$submittedAt24} (24h) / {$submittedAt12} (12h)

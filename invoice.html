@@ -296,7 +296,7 @@
 <body>
 
     <div class="actions-bar">
-        <a href="order.html" class="btn-action" style="background:#e2e8f0; color:#334155;">← Back to Order</a>
+        <a href="order" class="btn-action" style="background:#e2e8f0; color:#334155;">← Back to Order</a>
         <div style="display:flex; gap:10px;">
             <button onclick="downloadPDF()" class="btn-action btn-print" style="background:#16a34a;">📥 Download
                 PDF</button>
@@ -476,7 +476,7 @@
             html2pdf().set(opt).from(element).save().then(() => {
                 // After PDF is generated & saved, automatically redirect back to Homepage
                 setTimeout(() => {
-                    window.location.href = 'index.html?order=success';
+                    window.location.href = './?order=success';
                 }, 2000);
             });
         }
