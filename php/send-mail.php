@@ -16,30 +16,150 @@ require_once __DIR__ . '/../PHPMailer/src/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$input = json_decode(file_get_contents('php://input'), true) ?: $_POST;
+/**
+ * Automatically adapts mail transport depending on the hosting environment (GoDaddy shared hosting vs Localhost/XAMPP)
+ * with graceful fallback to prevent timeouts, firewall blocks, and 500 errors.
+ */
+function sendMailWithAdaptiveTransport(PHPMailer $mail): bool {
+    $serverName = $_SERVER['SERVER_NAME'] ?? $_SERVER['HTTP_HOST'] ?? '';
+    $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? '';
+    $isLocal = in_array($serverName, ['localhost', '127.0.0.1'], true)
+        || in_array($remoteAddr, ['127.0.0.1', '::1'], true)
+        || php_sapi_name() === 'cli';
+
+    $errors = [];
+
+    // Define transport strategy cascade
+    if ($isLocal) {
+        $strategies = [
+            'godaddy_smtp_465' => function (PHPMailer $m) {
+                $m->isSMTP();
+                $m->Host = 'smtpout.secureserver.net';
+                $m->SMTPAuth = true;
+                $m->Username = 'info@nagercoilcrackersmart.com';
+                $m->Password = 'Diwalisales@2026';
+                $m->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $m->Port = 465;
+                $m->Timeout = 6;
+                $m->SMTPAutoTLS = false;
+                $m->SMTPOptions = [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true,
+                    ]
+                ];
+            },
+            'godaddy_smtp_587' => function (PHPMailer $m) {
+                $m->isSMTP();
+                $m->Host = 'smtpout.secureserver.net';
+                $m->SMTPAuth = true;
+                $m->Username = 'info@nagercoilcrackersmart.com';
+                $m->Password = 'Diwalisales@2026';
+                $m->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $m->Port = 587;
+                $m->Timeout = 6;
+                $m->SMTPOptions = [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true,
+                    ]
+                ];
+            },
+            'native_mail' => function (PHPMailer $m) {
+                $m->isMail();
+            }
+        ];
+    } else {
+        // Live production (GoDaddy Shared Hosting):
+        // 1. Native mail() - GoDaddy's built-in local MTA (instant, zero firewall blockage)
+        // 2. GoDaddy internal relay on port 25 without auth
+        // 3. Localhost relay on port 25 without auth
+        // 4. Authenticated SMTP with short timeout
+        $strategies = [
+            'native_mail' => function (PHPMailer $m) {
+                $m->isMail();
+            },
+            'godaddy_relay_25' => function (PHPMailer $m) {
+                $m->isSMTP();
+                $m->Host = 'relay-hosting.secureserver.net';
+                $m->SMTPAuth = false;
+                $m->SMTPSecure = false;
+                $m->SMTPAutoTLS = false;
+                $m->Port = 25;
+                $m->Timeout = 4;
+            },
+            'localhost_25' => function (PHPMailer $m) {
+                $m->isSMTP();
+                $m->Host = 'localhost';
+                $m->SMTPAuth = false;
+                $m->SMTPSecure = false;
+                $m->SMTPAutoTLS = false;
+                $m->Port = 25;
+                $m->Timeout = 4;
+            },
+            'godaddy_smtp_465' => function (PHPMailer $m) {
+                $m->isSMTP();
+                $m->Host = 'smtpout.secureserver.net';
+                $m->SMTPAuth = true;
+                $m->Username = 'info@nagercoilcrackersmart.com';
+                $m->Password = 'Diwalisales@2026';
+                $m->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $m->Port = 465;
+                $m->Timeout = 4;
+                $m->SMTPOptions = [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true,
+                    ]
+                ];
+            }
+        ];
+    }
+
+    foreach ($strategies as $name => $configure) {
+        try {
+            $configure($mail);
+            if ($mail->send()) {
+                return true;
+            }
+        } catch (\Throwable $e) {
+            $errors[$name] = $e->getMessage();
+            try {
+                $mail->smtpClose();
+            } catch (\Throwable $ignore) {}
+        }
+    }
+
+    throw new \Exception('Failed to send email through all available delivery channels: ' . json_encode($errors));
+}
+
+$rawInput = file_get_contents('php://input');
+$input = (!empty($rawInput) ? json_decode($rawInput, true) : null) ?: $_POST;
+if (!is_array($input)) {
+    $input = [];
+}
 
 try {
     $formType = trim($input['formType'] ?? 'contactEnquiry');
 
     $mail = new PHPMailer(true);
-    $mail->SMTPDebug = 0;
-
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'silambarasan07.k@gmail.com';
-    $mail->Password = 'lyroqolwernrbevk';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
-
-    $mail->setFrom('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart');
-    $mail->addAddress('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart Admin');
-    // $mail->addAddress('nagercoilcrackersmart@gmail.com', 'Nagercoil Crackers Mart Admin');
-    // $mail->addBCC('rajeith.t@gmail.com', 'Nagercoil Crackers Mart Admin');
-
-
-    $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
+    $mail->isHTML(true);
+
+    $mail->setFrom('info@nagercoilcrackersmart.com','Nagercoil Crackers Mart');
+    $mail->Sender = 'info@nagercoilcrackersmart.com';
+
+    $mail->addAddress('silambarasan07.k@gmail.com','Nagercoil Crackers Mart Admin');
+
+    // Additional Admin Copy Recipients (BCC)
+    $mail->addBCC('sabariganesh.s1998@gmail.com','NagercoilCrackersMart');
+    $mail->addBCC('rajeith4107@gmail.com','NagercoilCrackersMart');
+    $mail->addBCC('itspjpradeep@gmail.com','NagercoilCrackersMart');
+    $mail->addBCC('choumiyanss@gmail.com','NagercoilCrackersMart');
+    $mail->addBCC('nagercoilcrackersmart@gmail.com','NagercoilCrackersMart');
 
     date_default_timezone_set('Asia/Kolkata');
     $submittedAt24 = date('Y-m-d H:i');
@@ -199,16 +319,24 @@ try {
         ";
     }
 
-    $mail->send();
+    sendMailWithAdaptiveTransport($mail);
+
+    $successMsg = ($formType === 'orderInquiry')
+        ? 'Order invoice sent successfully via email!'
+        : 'Enquiry sent successfully via email!';
 
     echo json_encode([
         'status' => 'success',
-        'message' => 'Order invoice sent successfully via email!',
+        'message' => $successMsg,
     ]);
-} catch (Exception $e) {
+} catch (\Throwable $e) {
+    error_log('Nagercoil Crackers Mart - Mail Error: ' . $e->getMessage());
+
     http_response_code(500);
+
     echo json_encode([
         'status' => 'error',
-        'message' => 'Failed to send enquiry: ' . $e->getMessage(),
+        'message' => 'Unable to send email. Please try again later.',
+        'details' => $e->getMessage()
     ]);
 }

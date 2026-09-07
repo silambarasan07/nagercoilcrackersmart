@@ -220,6 +220,41 @@
             color: #ffffff;
         }
 
+        /* Combo Offers Emerald & Cyan Button Styling */
+        .btn-combo {
+            background: linear-gradient(135deg, #059669 0%, #06b6d4 100%);
+            color: #ffffff;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            animation: emeraldPulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes emeraldPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+                filter: brightness(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(6, 182, 212, 0.95), 0 0 12px rgba(5, 150, 105, 0.8);
+                filter: brightness(1.2);
+            }
+        }
+
+        .btn-combo:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.6);
+            background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+            color: #ffffff;
+        }
+
         .btn-blue-select {
             background: #0284c7;
             color: #ffffff;
@@ -531,18 +566,48 @@
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
+                <nav class="hidden lg:flex items-center space-x-7">
                     <a href="#home" class="nav-link active font-medium">Home</a>
                     <a href="#categories" class="nav-link font-medium">Categories</a>
                     <a href="#products" class="nav-link font-medium">Products</a>
-                    <a href="order" class="btn-gold px-5 py-2 rounded-full text-sm">Order Now (Price List)</a>
+                    
+                    <!-- Combo List Dropdown in Navbar -->
+                    <div class="relative">
+                        <button onclick="toggleComboDropdown('navComboDropdown')" class="btn-combo px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1.5 focus:outline-none cursor-pointer">
+                            Combo Offers <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                        </button>
+                        <div id="navComboDropdown" class="combo-dropdown-menu hidden absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-slate-200 py-2 z-[100] animate-fade-in">
+                            <a href="assets/combo-list/5K Kids Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5K Kids Combo Kit list details.pdf', '5K Kids Combo Kit')" class="flex items-center justify-between px-4 py-2.5 hover:bg-sky-50 text-slate-700 hover:text-sky-600 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <span>5K Kids Combo Kit</span>
+                                <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">5K</span>
+                            </a>
+                            <a href="assets/combo-list/5.5K Blast Combo Pack 2026.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5.5K Blast Combo Pack 2026.pdf', '5.5K Blast Combo Pack')" class="flex items-center justify-between px-4 py-2.5 hover:bg-sky-50 text-slate-700 hover:text-sky-600 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <span>5.5K Blast Combo</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full font-bold">5.5K</span>
+                            </a>
+                            <a href="assets/combo-list/7K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/7K Combo Kit list details.pdf', '7K Combo Kit')" class="flex items-center justify-between px-4 py-2.5 hover:bg-sky-50 text-slate-700 hover:text-sky-600 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <span>7K Combo Kit</span>
+                                <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-bold">7K</span>
+                            </a>
+                            <a href="assets/combo-list/10K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/10K Combo Kit list details.pdf', '10K Combo Kit')" class="flex items-center justify-between px-4 py-2.5 hover:bg-sky-50 text-slate-700 hover:text-sky-600 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <span>10K Combo Kit</span>
+                                <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-bold">10K</span>
+                            </a>
+                            <a href="assets/combo-list/20K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/20K Combo Kit list details.pdf', '20K Combo Kit')" class="flex items-center justify-between px-4 py-2.5 hover:bg-sky-50 text-slate-700 hover:text-sky-600 transition-colors text-sm font-semibold">
+                                <span>20K Combo Kit</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full font-bold">20K</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="order.html" class="btn-gold px-5 py-2 rounded-full text-sm">Order Now (Price List)</a>
                     <a href="#about" class="nav-link font-medium">About Us</a>
                     <a href="#contact" class="nav-link font-medium">Contact</a>
                 </nav>
 
                 <!-- Cart & Mobile Menu -->
                 <div class="flex items-center space-x-4">
-                    <a href="order" class="relative p-2 text-[#0284c7] hover:text-[#0369a1] transition-colors">
+                    <a href="order.html" class="relative p-2 text-[#0284c7] hover:text-[#0369a1] transition-colors">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span id="cart-count"
                             class="cart-badge absolute -top-1 -right-1 bg-[#d8593f] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
@@ -564,14 +629,45 @@
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
-        <nav class="flex flex-col space-y-5">
+        <nav class="flex flex-col space-y-4">
             <a href="#home" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">Home</a>
             <a href="#categories" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">Categories</a>
             <a href="#products" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">Products</a>
-            <a href="order" onclick="toggleMobileMenu()" class="btn-gold text-center py-3 rounded-full text-base">Order
+
+            <!-- Mobile Combo List Dropdown -->
+            <div class="border-y border-slate-200 py-3 my-1">
+                <button onclick="toggleComboDropdown('mobileComboDropdown')" class="w-full flex items-center justify-between text-[#0f172a] hover:text-[#0284c7] font-bold text-lg">
+                    <span>Combo Offers</span>
+                    <i class="fas fa-chevron-down text-sm"></i>
+                </button>
+                <div id="mobileComboDropdown" class="combo-dropdown-menu hidden pl-3 mt-3 space-y-2.5 border-l-2 border-sky-500">
+                    <a href="assets/combo-list/5K Kids Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5K Kids Combo Kit list details.pdf', '5K Kids Combo Kit'); toggleMobileMenu();" class="flex items-center justify-between py-1.5 text-sm text-slate-700 font-semibold hover:text-sky-600">
+                        <span>5K Kids Combo Kit</span>
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">5K</span>
+                    </a>
+                    <a href="assets/combo-list/5.5K Blast Combo Pack 2026.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5.5K Blast Combo Pack 2026.pdf', '5.5K Blast Combo Pack'); toggleMobileMenu();" class="flex items-center justify-between py-1.5 text-sm text-slate-700 font-semibold hover:text-sky-600">
+                        <span>5.5K Blast Combo Pack</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded font-bold">5.5K</span>
+                    </a>
+                    <a href="assets/combo-list/7K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/7K Combo Kit list details.pdf', '7K Combo Kit'); toggleMobileMenu();" class="flex items-center justify-between py-1.5 text-sm text-slate-700 font-semibold hover:text-sky-600">
+                        <span>7K Combo Kit</span>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">7K</span>
+                    </a>
+                    <a href="assets/combo-list/10K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/10K Combo Kit list details.pdf', '10K Combo Kit'); toggleMobileMenu();" class="flex items-center justify-between py-1.5 text-sm text-slate-700 font-semibold hover:text-sky-600">
+                        <span>10K Combo Kit</span>
+                        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded font-bold">10K</span>
+                    </a>
+                    <a href="assets/combo-list/20K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/20K Combo Kit list details.pdf', '20K Combo Kit'); toggleMobileMenu();" class="flex items-center justify-between py-1.5 text-sm text-slate-700 font-semibold hover:text-sky-600">
+                        <span>20K Combo Kit</span>
+                        <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded font-bold">20K</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="order.html" onclick="toggleMobileMenu()" class="btn-gold text-center py-3 rounded-full text-base">Order
                 Now (Diwali 2026)</a>
             <a href="#about" onclick="toggleMobileMenu()"
                 class="text-[#0f172a] hover:text-[#0284c7] font-medium text-lg">About Us</a>
@@ -631,11 +727,57 @@
                                 <span class="pill-tag-dark">Free Delivery <b>within 20km Nagercoil</b></span>
                             </div>
 
-                            <div class="flex flex-wrap gap-3">
-                                <a href="order"
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <a href="order.html"
                                     class="btn-gold px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-center text-xs sm:text-sm shadow-lg flex items-center gap-2">
                                     <i class="fas fa-list-alt"></i> View Diwali 2026 Price List
                                 </a>
+
+                                <!-- Hero Combo Pack Dropdown Button (Blinking Offer Button) -->
+                                <div class="relative">
+                                    <button onclick="toggleComboDropdown('heroComboDropdown')"
+                                        class="btn-combo px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-center text-xs sm:text-sm shadow-xl flex items-center gap-2 cursor-pointer">
+                                        Combo Offers <i class="fas fa-chevron-down text-xs ml-0.5"></i>
+                                    </button>
+                                    <div id="heroComboDropdown" class="combo-dropdown-menu hidden absolute left-0 bottom-full mb-3 w-72 bg-white text-slate-900 rounded-xl shadow-2xl border border-slate-200 py-2 z-[100]">
+                                        <a href="assets/combo-list/5K Kids Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5K Kids Combo Kit list details.pdf', '5K Kids Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                            <div>
+                                                <div class="leading-tight font-bold">5K Kids Combo Kit</div>
+                                                <div class="text-[11px] text-slate-400 font-normal">Sivakasi Kids Special</div>
+                                            </div>
+                                            <span class="text-xs bg-amber-500 text-white px-2 py-0.5 rounded-full font-bold">5K</span>
+                                        </a>
+                                        <a href="assets/combo-list/5.5K Blast Combo Pack 2026.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5.5K Blast Combo Pack 2026.pdf', '5.5K Blast Combo Pack')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                            <div>
+                                                <div class="leading-tight font-bold">5.5K Blast Combo</div>
+                                                <div class="text-[11px] text-slate-400 font-normal">Diwali 2026 Special</div>
+                                            </div>
+                                            <span class="text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full font-bold">5.5K</span>
+                                        </a>
+                                        <a href="assets/combo-list/7K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/7K Combo Kit list details.pdf', '7K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                            <div>
+                                                <div class="leading-tight font-bold">7K Combo Kit</div>
+                                                <div class="text-[11px] text-slate-400 font-normal">Family Bumper Pack</div>
+                                            </div>
+                                            <span class="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full font-bold">7K</span>
+                                        </a>
+                                        <a href="assets/combo-list/10K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/10K Combo Kit list details.pdf', '10K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                            <div>
+                                                <div class="leading-tight font-bold">10K Combo Kit</div>
+                                                <div class="text-[11px] text-slate-400 font-normal">Mega Variety Pack</div>
+                                            </div>
+                                            <span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded-full font-bold">10K</span>
+                                        </a>
+                                        <a href="assets/combo-list/20K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/20K Combo Kit list details.pdf', '20K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold">
+                                            <div>
+                                                <div class="leading-tight font-bold">20K Combo Kit</div>
+                                                <div class="text-[11px] text-slate-400 font-normal">Grand Luxury Fireworks</div>
+                                            </div>
+                                            <span class="text-xs bg-amber-600 text-white px-2 py-0.5 rounded-full font-bold">20K</span>
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <a href="#contact"
                                     class="border border-white/40 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-semibold text-center text-xs sm:text-sm hover:bg-white hover:text-slate-900 transition-all bg-black/30 backdrop-blur-sm shadow-md">
                                     Contact Us
@@ -658,21 +800,21 @@
 
             <!-- Slide 1: 7K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order" class="block w-full h-full">
+                <a href="order.html" class="block w-full h-full">
                     <img src="assets/videos/7K combo-banner.png" alt="7K Combo Banner" class="banner-full-img">
                 </a>
             </div>
 
             <!-- Slide 2: 10K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order" class="block w-full h-full">
+                <a href="order.html" class="block w-full h-full">
                     <img src="assets/videos/10k combo-banner.png" alt="10K Combo Banner" class="banner-full-img">
                 </a>
             </div>
 
             <!-- Slide 3: 20K Combo Banner (Full Screen Display, Edge-to-Edge) -->
             <div class="hero-slide p-0">
-                <a href="order" class="block w-full h-full">
+                <a href="order.html" class="block w-full h-full">
                     <img src="assets/videos/20k combo-banner.png" alt="20K Combo Banner" class="banner-full-img">
                 </a>
             </div>
@@ -699,6 +841,110 @@
 
             <!-- 5-Second Animated Progress Bar -->
             <div id="slideProgressBar" class="slide-progress-bar"></div>
+        </div>
+    </section>
+
+    <!-- Dedicated Combo Pack PDF Download Section (Transparent Light Theme) -->
+    <section id="combo-list" class="py-12 bg-transparent border-b border-[#cbd5e1] relative z-20">
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-left lg:w-1/2">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                        Special Diwali Combo Price Lists
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-3 leading-tight">
+                        Download Combo Pack Price Lists
+                    </h2>
+                    <p class="text-[#475569] text-sm sm:text-base leading-relaxed mb-6">
+                        Explore our curated Sivakasi Diwali 2026 combo list catalogs. Select any combo package below to instantly download the itemized PDF price list.
+                    </p>
+                    
+                    <!-- Main Dropdown Button for Section -->
+                    <div class="relative inline-block text-left mb-4 sm:mb-0">
+                        <button onclick="toggleComboDropdown('sectionComboDropdown')" class="btn-combo px-6 py-3.5 rounded-xl font-bold text-sm shadow-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                            <span>Combo Offers</span>
+                            <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        
+                        <div id="sectionComboDropdown" class="combo-dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white text-slate-900 rounded-xl shadow-2xl border border-slate-200 py-2 z-[100]">
+                            <a href="assets/combo-list/5K Kids Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5K Kids Combo Kit list details.pdf', '5K Kids Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <div>
+                                    <div class="leading-tight font-bold">5K Kids Combo Kit</div>
+                                    <div class="text-xs text-slate-400 font-normal">Includes kids sparklers, pot & chakkar</div>
+                                </div>
+                                <span class="text-xs bg-amber-500 text-white px-2.5 py-1 rounded-md font-bold shadow-sm">5K</span>
+                            </a>
+                            <a href="assets/combo-list/5.5K Blast Combo Pack 2026.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5.5K Blast Combo Pack 2026.pdf', '5.5K Blast Combo Pack')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <div>
+                                    <div class="leading-tight font-bold">5.5K Blast Combo Pack</div>
+                                    <div class="text-xs text-slate-400 font-normal">Diwali 2026 sound & sky shot blast</div>
+                                </div>
+                                <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded-md font-bold shadow-sm">5.5K</span>
+                            </a>
+                            <a href="assets/combo-list/7K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/7K Combo Kit list details.pdf', '7K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <div>
+                                    <div class="leading-tight font-bold">7K Combo Kit</div>
+                                    <div class="text-xs text-slate-400 font-normal">Family favourite fireworks pack</div>
+                                </div>
+                                <span class="text-xs bg-red-600 text-white px-2.5 py-1 rounded-md font-bold shadow-sm">7K</span>
+                            </a>
+                            <a href="assets/combo-list/10K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/10K Combo Kit list details.pdf', '10K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold border-b border-slate-100">
+                                <div>
+                                    <div class="leading-tight font-bold">10K Combo Kit</div>
+                                    <div class="text-xs text-slate-400 font-normal">Bumper fancy sky shot pack</div>
+                                </div>
+                                <span class="text-xs bg-purple-600 text-white px-2.5 py-1 rounded-md font-bold shadow-sm">10K</span>
+                            </a>
+                            <a href="assets/combo-list/20K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/20K Combo Kit list details.pdf', '20K Combo Kit')" class="flex items-center justify-between px-4 py-3 hover:bg-sky-50 text-slate-800 hover:text-sky-700 transition-colors text-sm font-semibold">
+                                <div>
+                                    <div class="leading-tight font-bold">20K Combo Kit</div>
+                                    <div class="text-xs text-slate-400 font-normal">Grand luxury multi-shot celebration</div>
+                                </div>
+                                <span class="text-xs bg-amber-600 text-white px-2.5 py-1 rounded-md font-bold shadow-sm">20K</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Access Button Badges (Responsive Grid) -->
+                <div class="lg:w-1/2 w-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <a href="assets/combo-list/5K Kids Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5K Kids Combo Kit list details.pdf', '5K Kids Combo Kit')" class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm hover:shadow-md p-4 rounded-xl text-center group transition-all transform hover:-translate-y-1 block">
+                        <div class="text-2xl mb-1 group-hover:scale-110 transition-transform">🧸</div>
+                        <div class="font-extrabold text-[#d97706] text-base">5K Combo</div>
+                        <div class="text-xs text-[#475569] mt-1 flex items-center justify-center gap-1">
+                            <i class="fas fa-download text-[10px]"></i> Download PDF
+                        </div>
+                    </a>
+                    <a href="assets/combo-list/5.5K Blast Combo Pack 2026.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/5.5K Blast Combo Pack 2026.pdf', '5.5K Blast Combo Pack')" class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm hover:shadow-md p-4 rounded-xl text-center group transition-all transform hover:-translate-y-1 block">
+                        <div class="text-2xl mb-1 group-hover:scale-110 transition-transform">⚡</div>
+                        <div class="font-extrabold text-orange-600 text-base">5.5K Combo</div>
+                        <div class="text-xs text-[#475569] mt-1 flex items-center justify-center gap-1">
+                            <i class="fas fa-download text-[10px]"></i> Download PDF
+                        </div>
+                    </a>
+                    <a href="assets/combo-list/7K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/7K Combo Kit list details.pdf', '7K Combo Kit')" class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm hover:shadow-md p-4 rounded-xl text-center group transition-all transform hover:-translate-y-1 block">
+                        <div class="text-2xl mb-1 group-hover:scale-110 transition-transform">🎆</div>
+                        <div class="font-extrabold text-red-600 text-base">7K Combo</div>
+                        <div class="text-xs text-[#475569] mt-1 flex items-center justify-center gap-1">
+                            <i class="fas fa-download text-[10px]"></i> Download PDF
+                        </div>
+                    </a>
+                    <a href="assets/combo-list/10K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/10K Combo Kit list details.pdf', '10K Combo Kit')" class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm hover:shadow-md p-4 rounded-xl text-center group transition-all transform hover:-translate-y-1 block">
+                        <div class="text-2xl mb-1 group-hover:scale-110 transition-transform">🌟</div>
+                        <div class="font-extrabold text-purple-600 text-base">10K Combo</div>
+                        <div class="text-xs text-[#475569] mt-1 flex items-center justify-center gap-1">
+                            <i class="fas fa-download text-[10px]"></i> Download PDF
+                        </div>
+                    </a>
+                    <a href="assets/combo-list/20K Combo Kit list details.pdf" target="_blank" onclick="openAndDownloadPdf(event, 'assets/combo-list/20K Combo Kit list details.pdf', '20K Combo Kit')" class="bg-white border border-[#cbd5e1] hover:border-[#0284c7] shadow-sm hover:shadow-md p-4 rounded-xl text-center group transition-all transform hover:-translate-y-1 block col-span-2 sm:col-span-1">
+                        <div class="text-2xl mb-1 group-hover:scale-110 transition-transform">👑</div>
+                        <div class="font-extrabold text-amber-600 text-base">20K Combo</div>
+                        <div class="text-xs text-[#475569] mt-1 flex items-center justify-center gap-1">
+                            <i class="fas fa-download text-[10px]"></i> Download PDF
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -758,7 +1004,7 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <!-- Sparklers Card -->
-                <a href="order#cat-sparklers"
+                <a href="order.html#cat-sparklers"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -774,7 +1020,7 @@
                 </a>
 
                 <!-- Flower Pots Card -->
-                <a href="order#cat-flower-pots-economy"
+                <a href="order.html#cat-flower-pots-economy"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -790,7 +1036,7 @@
                 </a>
 
                 <!-- Ground Chakar Card -->
-                <a href="order#cat-ground-chakar"
+                <a href="order.html#cat-ground-chakar"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -806,7 +1052,7 @@
                 </a>
 
                 <!-- Children's Special Card -->
-                <a href="order#cat-childrens-special"
+                <a href="order.html#cat-childrens-special"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -822,7 +1068,7 @@
                 </a>
 
                 <!-- Rockets Card -->
-                <a href="order#cat-rockets"
+                <a href="order.html#cat-rockets"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -838,7 +1084,7 @@
                 </a>
 
                 <!-- Atom Bombs Card -->
-                <a href="order#cat-bombs"
+                <a href="order.html#cat-bombs"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -854,7 +1100,7 @@
                 </a>
 
                 <!-- Fancy Fountains Card -->
-                <a href="order#cat-new-fancy-fountains"
+                <a href="order.html#cat-new-fancy-fountains"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -870,7 +1116,7 @@
                 </a>
 
                 <!-- View All Card -->
-                <a href="order"
+                <a href="order.html"
                     class="category-card relative overflow-hidden rounded-xl p-6 text-center block group min-h-[170px] flex flex-col items-center justify-center border-[#0284c7]">
                     <video autoplay loop muted playsinline
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -895,7 +1141,7 @@
                     <h2 class="text-3xl font-bold gold-gradient-text">Featured Fireworks</h2>
                     <p class="text-[#475569] text-sm mt-1">Popular crackers from our Diwali 2026 catalog</p>
                 </div>
-                <a href="order" class="btn-gold px-6 py-2.5 rounded-full text-sm">
+                <a href="order.html" class="btn-gold px-6 py-2.5 rounded-full text-sm">
                     Open Full Order List & Order Form →
                 </a>
             </div>
@@ -918,7 +1164,7 @@
                             <span class="text-xs text-[#64748b] line-through block">₹160</span>
                             <span class="text-lg font-bold text-[#166534]">₹48</span>
                         </div>
-                        <a href="order"
+                        <a href="order.html"
                             class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
@@ -941,7 +1187,7 @@
                             <span class="text-xs text-[#64748b] line-through block">₹365</span>
                             <span class="text-lg font-bold text-[#166534]">₹95</span>
                         </div>
-                        <a href="order"
+                        <a href="order.html"
                             class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
@@ -964,7 +1210,7 @@
                             <span class="text-xs text-[#64748b] line-through block">₹295</span>
                             <span class="text-lg font-bold text-[#166534]">₹87</span>
                         </div>
-                        <a href="order"
+                        <a href="order.html"
                             class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
@@ -987,7 +1233,7 @@
                             <span class="text-xs text-[#64748b] line-through block">₹2,200</span>
                             <span class="text-lg font-bold text-[#166534]">₹505</span>
                         </div>
-                        <a href="order"
+                        <a href="order.html"
                             class="btn-blue-select px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Select
                             Item</a>
                     </div>
@@ -1511,7 +1757,7 @@
                         submitBtn.innerHTML = '✓ SENT SUCCESSFULLY';
                     }
                     if (statusDiv) {
-                        statusDiv.className = 'mt-3 text-center text-xs font-semibold text-emerald-600';
+                        statusDiv.className = 'mt-3 text-center text-xs font-semibold text-emerald-600 transition-opacity duration-300';
                         statusDiv.textContent = msg || 'Thank you for contacting Nagercoil Crackers Mart! Your enquiry has been received successfully.';
                         statusDiv.classList.remove('hidden');
                     }
@@ -1531,13 +1777,17 @@
                     window.open(waUrl, '_blank');
 
                     setTimeout(() => {
+                        if (statusDiv) {
+                            statusDiv.classList.add('hidden');
+                            statusDiv.textContent = '';
+                        }
                         if (submitBtn) {
                             submitBtn.style.backgroundColor = '';
                             submitBtn.style.color = '';
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = 'Send Inquiry Now';
                         }
-                    }, 4000);
+                    }, 3000);
                 };
 
                 // Immediately trigger instant UI feedback and launch WhatsApp for zero-delay UX
@@ -1549,6 +1799,13 @@
                     headers: { 'Content-Type': 'application/json' },
                     keepalive: true,
                     body: JSON.stringify(formData)
+                }).then(async (res) => {
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) {
+                        console.warn('Mailer notice:', data.message || res.statusText);
+                    } else {
+                        console.log('Enquiry email status:', data.message || 'Sent');
+                    }
                 }).catch(err => console.error('Background mailer error:', err));
             });
         };
@@ -1776,6 +2033,84 @@
                     }
                 });
             });
+        });
+
+        // Combo Pack List Dropdown & Auto Download Handlers
+        function toggleComboDropdown(id) {
+            const targetDropdown = document.getElementById(id);
+            if (!targetDropdown) return;
+            
+            const allDropdowns = document.querySelectorAll('.combo-dropdown-menu');
+            allDropdowns.forEach(dropdown => {
+                if (dropdown.id !== id) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+            
+            targetDropdown.classList.toggle('hidden');
+        }
+
+        function openAndDownloadPdf(e, pdfUrl, packName) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            document.querySelectorAll('.combo-dropdown-menu').forEach(d => d.classList.add('hidden'));
+            showToast('Opening brochure & downloading ' + packName + '...');
+            
+            if (pdfUrl) {
+                // 1. Open PDF brochure in a new tab/window for viewing
+                window.open(pdfUrl, '_blank');
+                
+                // 2. Fetch PDF file as a Blob to force automatic file download without changing current page
+                const filename = pdfUrl.split('/').pop() || (packName + '.pdf');
+                fetch(pdfUrl)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network error loading PDF file');
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        const blobUrl = URL.createObjectURL(blob);
+                        const downloadAnchor = document.createElement('a');
+                        downloadAnchor.style.display = 'none';
+                        downloadAnchor.href = blobUrl;
+                        downloadAnchor.download = decodeURIComponent(filename);
+                        document.body.appendChild(downloadAnchor);
+                        downloadAnchor.click();
+                        setTimeout(() => {
+                            if (document.body.contains(downloadAnchor)) {
+                                document.body.removeChild(downloadAnchor);
+                            }
+                            URL.revokeObjectURL(blobUrl);
+                        }, 1000);
+                    })
+                    .catch(err => {
+                        console.warn('Blob auto-download failed:', err);
+                    });
+            }
+        }
+
+        function showToast(message) {
+            let toast = document.getElementById('toast-notification');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'toast-notification';
+                toast.className = 'fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl z-50 flex items-center gap-3 border border-sky-500/50 font-semibold text-sm transition-all duration-300 transform translate-y-10 opacity-0';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = '<i class="fas fa-file-pdf text-red-400 text-lg"></i> ' + message;
+            toast.classList.remove('translate-y-10', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+            }, 3500);
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.relative') && !e.target.closest('#mobile-menu')) {
+                document.querySelectorAll('.combo-dropdown-menu').forEach(d => d.classList.add('hidden'));
+            }
         });
     </script>
 </body>
