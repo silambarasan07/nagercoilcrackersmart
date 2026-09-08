@@ -26,10 +26,33 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #0284c7 #e0f2fe;
+}
+
+/* Custom Brand Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0f2fe;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+  border-radius: 99px;
+  border: 2px solid #e0f2fe;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0369a1 0%, #075985 100%);
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html,
