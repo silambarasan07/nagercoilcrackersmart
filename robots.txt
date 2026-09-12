@@ -1,0 +1,9 @@
+# robots.txt for Nagercoil Crackers Mart
+User-agent: *
+Allow: /
+
+# Disallow backend script folders and scratch files
+Disallow: /php/
+
+# Sitemap URL
+Sitemap: https://nagercoilcrackersmart.com/sitemap.xml

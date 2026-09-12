@@ -158,15 +158,16 @@ try {
     $mail->addAddress('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart Admin');
 
     // Additional Admin Copy Recipients (BCC)
-    // $mail->addBCC('sabariganesh.s1998@gmail.com','NagercoilCrackersMart');
-    // $mail->addBCC('rajeith4107@gmail.com','NagercoilCrackersMart');
-    // $mail->addBCC('itspjpradeep@gmail.com','NagercoilCrackersMart');
-    // $mail->addBCC('choumiyanss@gmail.com','NagercoilCrackersMart');
-    // $mail->addBCC('nagercoilcrackersmart@gmail.com','NagercoilCrackersMart');
+    $mail->addBCC('sabariganesh.s1998@gmail.com', 'NagercoilCrackersMart');
+    $mail->addBCC('rajeith4107@gmail.com', 'NagercoilCrackersMart');
+    $mail->addBCC('itspjpradeep@gmail.com', 'NagercoilCrackersMart');
+    $mail->addBCC('choumiyanss@gmail.com', 'NagercoilCrackersMart');
+    $mail->addBCC('nagercoilcrackersmart@gmail.com', 'NagercoilCrackersMart');
 
     date_default_timezone_set('Asia/Kolkata');
     $submittedAt24 = date('Y-m-d H:i');
     $submittedAt12 = date('Y-m-d h:i A');
+
 
     if ($formType === 'orderInquiry') {
         $customer = $input['customer'] ?? [];
