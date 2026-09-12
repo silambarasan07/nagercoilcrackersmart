@@ -1654,8 +1654,14 @@
             </div>
 
             <p class="text-xs border-t border-sky-600/50 pt-5 opacity-80">
-                &copy; 2026 Nagercoil Crackers Mart. All rights reserved.
+                &copy; <span id="copyrightYear">2026</span> Nagercoil Crackers Mart. All rights reserved.
             </p>
+            <script>
+                (function() {
+                    var yr = document.getElementById('copyrightYear');
+                    if (yr) yr.textContent = new Date().getFullYear();
+                })();
+            </script>
         </div>
     </footer>
 
