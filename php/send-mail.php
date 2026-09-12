@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 require_once __DIR__ . '/../PHPMailer/src/PHPMailer.php';
 require_once __DIR__ . '/../PHPMailer/src/SMTP.php';
 require_once __DIR__ . '/../PHPMailer/src/Exception.php';
+require_once __DIR__ . '/invoice-pdf.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -20,7 +21,8 @@ use PHPMailer\PHPMailer\Exception;
  * Automatically adapts mail transport depending on the hosting environment (GoDaddy shared hosting vs Localhost/XAMPP)
  * with graceful fallback to prevent timeouts, firewall blocks, and 500 errors.
  */
-function sendMailWithAdaptiveTransport(PHPMailer $mail): bool {
+function sendMailWithAdaptiveTransport(PHPMailer $mail): bool
+{
     $serverName = $_SERVER['SERVER_NAME'] ?? $_SERVER['HTTP_HOST'] ?? '';
     $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? '';
     $isLocal = in_array($serverName, ['localhost', '127.0.0.1'], true)
@@ -129,7 +131,8 @@ function sendMailWithAdaptiveTransport(PHPMailer $mail): bool {
             $errors[$name] = $e->getMessage();
             try {
                 $mail->smtpClose();
-            } catch (\Throwable $ignore) {}
+            } catch (\Throwable $ignore) {
+            }
         }
     }
 
@@ -149,17 +152,17 @@ try {
     $mail->CharSet = 'UTF-8';
     $mail->isHTML(true);
 
-    $mail->setFrom('info@nagercoilcrackersmart.com','Nagercoil Crackers Mart');
+    $mail->setFrom('info@nagercoilcrackersmart.com', 'Nagercoil Crackers Mart');
     $mail->Sender = 'info@nagercoilcrackersmart.com';
 
-    $mail->addAddress('silambarasan07.k@gmail.com','Nagercoil Crackers Mart Admin');
+    $mail->addAddress('silambarasan07.k@gmail.com', 'Nagercoil Crackers Mart Admin');
 
     // Additional Admin Copy Recipients (BCC)
-    $mail->addBCC('sabariganesh.s1998@gmail.com','NagercoilCrackersMart');
-    $mail->addBCC('rajeith4107@gmail.com','NagercoilCrackersMart');
-    $mail->addBCC('itspjpradeep@gmail.com','NagercoilCrackersMart');
-    $mail->addBCC('choumiyanss@gmail.com','NagercoilCrackersMart');
-    $mail->addBCC('nagercoilcrackersmart@gmail.com','NagercoilCrackersMart');
+    // $mail->addBCC('sabariganesh.s1998@gmail.com','NagercoilCrackersMart');
+    // $mail->addBCC('rajeith4107@gmail.com','NagercoilCrackersMart');
+    // $mail->addBCC('itspjpradeep@gmail.com','NagercoilCrackersMart');
+    // $mail->addBCC('choumiyanss@gmail.com','NagercoilCrackersMart');
+    // $mail->addBCC('nagercoilcrackersmart@gmail.com','NagercoilCrackersMart');
 
     date_default_timezone_set('Asia/Kolkata');
     $submittedAt24 = date('Y-m-d H:i');
@@ -208,10 +211,32 @@ try {
         $packingFmt = number_format(floatval($totals['packing'] ?? 0), 2);
         $grandFmt = number_format(floatval($totals['grand'] ?? 0), 2);
 
-        $mail->Subject = "New Diwali 2026 Order Invoice [{$invoiceNo}] - {$custName}";
+        // Generate Native Vector PDF Invoice Attachment (100% full width, unclipped, crisp)
+        try {
+            $pdfBuffer = generateInvoicePdfBuffer([
+                'customer' => $customer,
+                'items' => $items,
+                'totals' => $totals,
+                'invoiceNo' => $invoiceNo,
+                'date' => $submittedAt24
+            ]);
+            $mail->addStringAttachment($pdfBuffer, "Order_Invoice_{$invoiceNo}.pdf", 'base64', 'application/pdf');
+        } catch (\Throwable $pdfErr) {
+            error_log('Nagercoil Crackers Mart - PDF Invoice Attachment Error: ' . $pdfErr->getMessage());
+        }
+
+        $mail->Subject = "New Order Invoice [{$invoiceNo}] - {$custName}";
 
         $mail->Body = "
         <div style='font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; box-sizing: border-box;'>
+            
+            <div style='background-color: #f8fafc; padding: 14px 16px; border-radius: 6px; border-left: 4px solid #c0392b; margin-bottom: 16px; font-size: 13.5px; color: #1e293b; line-height: 1.6;'>
+                <p style='margin: 0 0 8px 0;'>Dear <strong>{$custName}</strong>,</p>
+                <p style='margin: 0 0 8px 0;'>Thank you for your order.</p>
+                <p style='margin: 0 0 8px 0;'>Please find your invoice attached to this email. Kindly check the invoice for your order details, billing information, and total amount.</p>
+                <p style='margin: 0;'>Thank you for your business.</p>
+            </div>
+
             <table width='100%' cellpadding='0' cellspacing='0' style='margin-bottom: 12px;'>
                 <tr>
                     <td valign='top' style='padding-right: 8px;'>
@@ -222,7 +247,7 @@ try {
                         </p>
                     </td>
                     <td align='right' valign='top' style='white-space: nowrap;'>
-                        <h1 style='color: #c0392b; font-size: 18px; margin: 0; text-transform: uppercase; line-height: 1.2;'>DIWALI INVOICE</h1>
+                        <h1 style='color: #c0392b; font-size: 18px; margin: 0; text-transform: uppercase; line-height: 1.2;'>ORDER INVOICE</h1>
                         <span style='color: #475569; font-size: 11px; font-weight: bold;'># {$invoiceNo}</span>
                     </td>
                 </tr>

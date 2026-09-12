@@ -33,8 +33,28 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f1f5f9;
             color: var(--text-dark);
-            padding: 40px 20px;
+            padding: 30px 16px;
             font-size: 14px;
+        }
+
+        .success-banner {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            color: #15803d;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(22, 163, 74, 0.1);
+        }
+
+        .success-banner span.icon {
+            font-size: 20px;
         }
 
         .invoice-card {
@@ -55,11 +75,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .actions-right {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .btn-action {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 10px 20px;
             border-radius: 99px;
@@ -68,7 +97,18 @@
             cursor: pointer;
             text-decoration: none;
             border: none;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .btn-back {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .btn-download {
+            background: #16a34a;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
         }
 
         .btn-print {
@@ -92,7 +132,8 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            gap: 16px;
         }
 
         .company-info h2 {
@@ -119,12 +160,12 @@
 
         .invoice-title {
             text-align: right;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .invoice-title h1 {
             font-family: 'Cinzel', serif;
-            font-size: 32px;
+            font-size: 28px;
             letter-spacing: 2px;
             color: var(--primary-red);
             font-weight: 700;
@@ -135,33 +176,35 @@
         .details-grid {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+            gap: 20px;
         }
 
         .bill-to h3 {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--primary-red);
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .bill-to p {
-            font-size: 14px;
+            font-size: 13.5px;
             line-height: 1.6;
             color: var(--text-dark);
         }
 
         .bill-to .cust-name {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15.5px;
             color: #0f172a;
         }
 
         .meta-table {
             border-collapse: collapse;
             text-align: right;
+            margin-left: auto;
         }
 
         .meta-table td {
@@ -180,11 +223,18 @@
             font-weight: 600;
         }
 
-        /* Products Table */
+        /* Products Table Wrapper for Horizontal Responsiveness */
+        .items-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 25px;
+        }
+
         .items-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 25px;
+            min-width: 480px;
         }
 
         .items-table th {
@@ -192,8 +242,8 @@
             color: #ffffff;
             font-weight: 600;
             text-align: left;
-            padding: 12px 16px;
-            font-size: 13px;
+            padding: 12px 14px;
+            font-size: 12.5px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -209,9 +259,9 @@
         }
 
         .items-table td {
-            padding: 14px 16px;
+            padding: 12px 14px;
             border-bottom: 1px solid var(--border-color);
-            font-size: 13.5px;
+            font-size: 13px;
         }
 
         .items-table tbody tr:nth-child(even) {
@@ -222,7 +272,7 @@
         .summary-wrap {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .summary-box {
@@ -233,17 +283,17 @@
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-dark);
         }
 
         .summary-row.total {
             border-top: 2px solid var(--primary-red);
             border-bottom: 2px solid var(--primary-red);
-            padding: 12px 0;
-            margin-top: 8px;
+            padding: 10px 0;
+            margin-top: 6px;
             font-weight: 700;
-            font-size: 17px;
+            font-size: 16.5px;
             color: var(--primary-red);
         }
 
@@ -258,10 +308,10 @@
 
         .terms-box h4,
         .bank-box h4 {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--primary-red);
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
@@ -270,6 +320,204 @@
             font-size: 12px;
             color: var(--text-muted);
             line-height: 1.6;
+            word-break: break-word;
+        }
+
+        /* Mobile Responsive Layout Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 12px 8px;
+            }
+
+            .success-banner {
+                font-size: 12.5px;
+                padding: 10px 12px;
+                border-radius: 8px;
+            }
+
+            .actions-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .actions-right {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .btn-action {
+                width: 100%;
+                padding: 11px 16px;
+                font-size: 13px;
+            }
+
+            .invoice-card {
+                padding: 20px 14px;
+                border-radius: 10px;
+            }
+
+            .invoice-header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .company-info {
+                text-align: center;
+            }
+
+            .logo-box {
+                text-align: center;
+            }
+
+            .logo-box img {
+                max-height: 55px;
+            }
+
+            .invoice-title {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .invoice-title h1 {
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
+
+            .details-grid {
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 20px;
+            }
+
+            .meta-table {
+                width: 100%;
+                margin-left: 0;
+                border-top: 1px dashed var(--border-color);
+                padding-top: 12px;
+            }
+
+            .meta-table td {
+                padding: 3px 0;
+                font-size: 12.5px;
+            }
+
+            .meta-table td.label {
+                text-align: left;
+                padding-left: 0;
+            }
+
+            .meta-table td.val {
+                text-align: right;
+            }
+
+            .items-table {
+                min-width: 100%;
+            }
+
+            .items-table th {
+                padding: 8px 6px;
+                font-size: 11px;
+            }
+
+            .items-table td {
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+
+            .summary-wrap {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+
+            .summary-box {
+                width: 100%;
+            }
+
+            .summary-row {
+                font-size: 13px;
+            }
+
+            .summary-row.total {
+                font-size: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding-top: 18px;
+            }
+        }
+
+        /* Styling overrides during PDF export so PDF is always crisp, 100% full width, and 1 page */
+        body.pdf-exporting {
+            background: #ffffff !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        body.pdf-exporting .success-banner,
+        body.pdf-exporting .actions-bar {
+            display: none !important;
+        }
+
+        body.pdf-exporting #invoice {
+            width: 780px !important;
+            max-width: 780px !important;
+            min-width: 780px !important;
+            margin: 0 auto !important;
+            padding: 25px 30px !important;
+            box-shadow: none !important;
+            border: none !important;
+            background: #ffffff !important;
+            position: relative !important;
+        }
+
+        body.pdf-exporting .invoice-header {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        body.pdf-exporting .company-info {
+            text-align: left !important;
+        }
+
+        body.pdf-exporting .logo-box {
+            text-align: right !important;
+        }
+
+        body.pdf-exporting .invoice-title {
+            text-align: right !important;
+        }
+
+        body.pdf-exporting .details-grid {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+        }
+
+        body.pdf-exporting .meta-table {
+            margin-left: auto !important;
+            width: auto !important;
+            border-top: none !important;
+        }
+
+        body.pdf-exporting .meta-table td.label {
+            text-align: right !important;
+            padding-left: 20px !important;
+        }
+
+        body.pdf-exporting .items-table {
+            min-width: 100% !important;
+        }
+
+        body.pdf-exporting .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
         }
 
         /* Print Media Style */
@@ -279,6 +527,7 @@
                 padding: 0;
             }
 
+            .success-banner,
             .actions-bar {
                 display: none !important;
             }
@@ -289,17 +538,27 @@
                 padding: 0;
                 max-width: 100%;
             }
+
+            .items-table-wrap {
+                overflow: visible;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <div class="success-banner">
+        <span class="icon">✅</span>
+        <div>
+            <strong>Order Placed Successfully!</strong> Your official invoice has been generated below and sent to your email address with PDF attachment.
+        </div>
+    </div>
+
     <div class="actions-bar">
-        <a href="order" class="btn-action" style="background:#e2e8f0; color:#334155;">← Back to Order</a>
-        <div style="display:flex; gap:10px;">
-            <button onclick="downloadPDF()" class="btn-action btn-print" style="background:#16a34a;">📥 Download
-                PDF</button>
+        <a href="order.html" class="btn-action btn-back">← Back to Shop</a>
+        <div class="actions-right">
+            <button onclick="downloadPDF()" class="btn-action btn-download">📥 Download PDF</button>
             <button onclick="window.print()" class="btn-action btn-print">🖨️ Print</button>
             <a id="whatsappShareBtn" href="#" target="_blank" class="btn-action btn-whatsapp">💬 Send via WhatsApp</a>
         </div>
@@ -318,7 +577,7 @@
         </div>
 
         <div class="invoice-title">
-            <h1>Diwali Order Invoice</h1>
+            <h1>Order Invoice</h1>
         </div>
 
         <!-- Details Grid -->
@@ -341,58 +600,48 @@
                     </tr>
                     <tr>
                         <td class="label">Payment Status</td>
-                        <td class="val" style="color:#16a34a;">Pending / Order Placed</td>
+                        <td class="val" style="color:#16a34a; font-weight:700;">Pending / Order Placed</td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <!-- Items Table -->
-        <table class="items-table">
-            <thead>
-                <tr>
-                    <th class="center" style="width: 70px;">QTY</th>
-                    <th>Description</th>
-                    <th class="right">Unit Price</th>
-                    <th class="right">Amount</th>
-                </tr>
-            </thead>
-            <tbody id="invItemsBody">
-                <tr>
-                    <td class="center">5</td>
-                    <td>10 Cm Sparklers (Electric)</td>
-                    <td class="right">₹45.00</td>
-                    <td class="right">₹225.00</td>
-                </tr>
-                <tr>
-                    <td class="center">2</td>
-                    <td>Flower Pots Special (5 Pcs)</td>
-                    <td class="right">₹180.00</td>
-                    <td class="right">₹360.00</td>
-                </tr>
-                <tr>
-                    <td class="center">1</td>
-                    <td>2 3/4" Chakar Deluxe</td>
-                    <td class="right">₹120.00</td>
-                    <td class="right">₹120.00</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="items-table-wrap">
+            <table class="items-table">
+                <thead>
+                    <tr>
+                        <th class="center" style="width: 50px;">QTY</th>
+                        <th>Description</th>
+                        <th class="right" style="width: 100px;">Unit Price</th>
+                        <th class="right" style="width: 100px;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="invItemsBody">
+                    <tr>
+                        <td class="center">5</td>
+                        <td>10 Cm Sparklers (Electric)</td>
+                        <td class="right">₹45.00</td>
+                        <td class="right">₹225.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Summary Calculation -->
         <div class="summary-wrap">
             <div class="summary-box">
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span id="invSubtotal">₹705.00</span>
+                    <span id="invSubtotal">₹0.00</span>
                 </div>
                 <div class="summary-row">
                     <span>Secured Packing Fee</span>
                     <span id="invPacking">₹75.00</span>
                 </div>
                 <div class="summary-row total">
-                    <span>Total (INR)</span>
-                    <span id="invTotal">₹780.00</span>
+                    <span>Total Amount (INR)</span>
+                    <span id="invTotal">₹0.00</span>
                 </div>
             </div>
         </div>
@@ -401,90 +650,136 @@
         <div class="footer-grid">
             <div class="terms-box">
                 <h4>Terms & Conditions</h4>
-                <p>1. Prices are net wholesale for Diwali 2026.<br>2. Free door delivery applicable within 20km of
-                    Nagercoil for valid orders.<br>3. Handle crackers with care under adult supervision.</p>
+                <p>1. Prices are net wholesale for Diwali 2026.<br>2. Free door delivery applicable within 20km of Nagercoil for valid orders.<br>3. Handle crackers with care under adult supervision.</p>
             </div>
             <div class="bank-box">
                 <h4>Bank Payment Details</h4>
-                <p><b>Bank:</b> Indian Overseas Bank (IOB)<br><b>A/C Name:</b> PRADEEP PJ<br><b>A/C No:</b>
-                    006301000046162<br><b>IFSC:</b> IOBA0000063<br><b>UPI ID:</b> itspjpradeep-1@okicici</p>
+                <p><b>Bank:</b> Indian Overseas Bank (IOB)<br><b>A/C Name:</b> PRADEEP PJ<br><b>A/C No:</b> 006301000046162<br><b>IFSC:</b> IOBA0000063<br><b>UPI ID:</b> itspjpradeep-1@okicici</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Load dynamic invoice data from localStorage if available
+        // Load dynamic invoice data from localStorage
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 const storedInvoice = localStorage.getItem('lastOrderInvoice');
-                if (!storedInvoice) return;
+                const storedWaUrl = localStorage.getItem('lastWhatsAppUrl');
 
-                const data = JSON.parse(storedInvoice);
-                if (!data) return;
+                if (storedInvoice) {
+                    const data = JSON.parse(storedInvoice);
+                    if (data) {
+                        document.getElementById('invCustName').textContent = data.customer.name || 'Valued Customer';
+                        const addrParts = [data.customer.address, data.customer.city ? `${data.customer.city} - ${data.customer.pincode}` : '', data.customer.state].filter(Boolean);
+                        document.getElementById('invCustAddress').textContent = addrParts.join(', ');
+                        document.getElementById('invCustContact').textContent = `Mobile: ${data.customer.mobile} | WhatsApp: ${data.customer.whatsapp}`;
+                        document.getElementById('invNumber').textContent = data.invoiceNo || `NCM-${Math.floor(100000 + Math.random() * 900000)}`;
+                        document.getElementById('invDate').textContent = data.date || new Date().toLocaleDateString('en-IN');
 
-                document.getElementById('invCustName').textContent = data.customer.name || 'Valued Customer';
-                document.getElementById('invCustAddress').textContent = `${data.customer.address}, ${data.customer.city} - ${data.customer.pincode}, ${data.customer.state}`;
-                document.getElementById('invCustContact').textContent = `Mobile: ${data.customer.mobile} | WhatsApp: ${data.customer.whatsapp}`;
-                document.getElementById('invNumber').textContent = data.invoiceNo || `NCM-${Math.floor(100000 + Math.random() * 900000)}`;
-                document.getElementById('invDate').textContent = data.date || new Date().toLocaleDateString('en-IN');
+                        const tbody = document.getElementById('invItemsBody');
+                        if (data.items && data.items.length > 0) {
+                            tbody.innerHTML = '';
+                            data.items.forEach(item => {
+                                const tr = document.createElement('tr');
+                                tr.innerHTML = `
+                                    <td class="center">${item.qty}</td>
+                                    <td>${item.name} ${item.pack ? `(${item.pack})` : ''}</td>
+                                    <td class="right">₹${parseFloat(item.price).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                                    <td class="right">₹${parseFloat(item.total).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                                `;
+                                tbody.appendChild(tr);
+                            });
+                        }
 
-                const tbody = document.getElementById('invItemsBody');
-                if (data.items && data.items.length > 0) {
-                    tbody.innerHTML = '';
-                    data.items.forEach(item => {
-                        const tr = document.createElement('tr');
-                        tr.innerHTML = `
-                            <td class="center">${item.qty}</td>
-                            <td>${item.name} ${item.pack ? `(${item.pack})` : ''}</td>
-                            <td class="right">₹${parseFloat(item.price).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
-                            <td class="right">₹${parseFloat(item.total).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
-                        `;
-                        tbody.appendChild(tr);
-                    });
+                        document.getElementById('invSubtotal').textContent = `₹${parseFloat(data.totals.offerTotal).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+                        document.getElementById('invPacking').textContent = `₹${parseFloat(data.totals.packing).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+                        document.getElementById('invTotal').textContent = `₹${parseFloat(data.totals.grand).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+                    }
                 }
 
-                document.getElementById('invSubtotal').textContent = `₹${parseFloat(data.totals.offerTotal).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
-                document.getElementById('invPacking').textContent = `₹${parseFloat(data.totals.packing).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
-                document.getElementById('invTotal').textContent = `₹${parseFloat(data.totals.grand).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
-
-                // WhatsApp share URL link
+                // Setup WhatsApp share button
                 const waBtn = document.getElementById('whatsappShareBtn');
-                if (waBtn && data.customer.whatsapp) {
-                    const text = encodeURIComponent(`Hi Nagercoil Crackers Mart, here is my order invoice #${data.invoiceNo} for ₹${data.totals.grand}.`);
-                    waBtn.href = `https://wa.me/918248159490?text=${text}`;
+                if (waBtn) {
+                    if (storedWaUrl) {
+                        waBtn.href = storedWaUrl;
+                    } else if (storedInvoice) {
+                        const data = JSON.parse(storedInvoice);
+                        const text = encodeURIComponent(`Hi Nagercoil Crackers Mart, here is my order invoice #${data.invoiceNo} for ₹${data.totals.grand}.`);
+                        waBtn.href = `https://wa.me/918248159490?text=${text}`;
+                    } else {
+                        waBtn.href = "https://wa.me/918248159490";
+                    }
                 }
 
-                // Auto download PDF file directly after rendering
+                // Automatic PDF Download trigger after layout stabilizes
                 setTimeout(() => {
                     downloadPDF();
-                }, 600);
+                }, 500);
             } catch (e) {
                 console.error("Error rendering invoice:", e);
             }
         });
 
-        function downloadPDF() {
+        async function downloadPDF() {
+            try {
+                const storedInvoice = localStorage.getItem('lastOrderInvoice');
+                if (storedInvoice) {
+                    const data = JSON.parse(storedInvoice);
+                    const response = await fetch('php/download-invoice.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        const blob = await response.blob();
+                        const invNo = data.invoiceNo || 'Invoice';
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `Order_Invoice_${invNo}.pdf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+                        setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.warn("Server PDF download failed, falling back to html2pdf:", e);
+            }
+
+            fallbackDownloadPDF();
+        }
+
+        function fallbackDownloadPDF() {
             const element = document.getElementById('invoice');
             const invNo = document.getElementById('invNumber').textContent || 'Invoice';
+            
+            document.body.classList.add('pdf-exporting');
+
             const opt = {
-                margin: 10,
-                filename: `Diwali_Order_Invoice_${invNo}.pdf`,
+                margin: [6, 6, 6, 6],
+                filename: `Order_Invoice_${invNo}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    scrollX: 0,
+                    scrollY: 0
+                },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
-            html2pdf().set(opt).from(element).save().then(() => {
-                // After PDF is generated & saved, automatically redirect back to Homepage
-                setTimeout(() => {
-                    window.location.href = './?order=success';
-                }, 2000);
+
+            return html2pdf().set(opt).from(element).save().then(() => {
+                document.body.classList.remove('pdf-exporting');
+            }).catch(err => {
+                console.error("PDF download error:", err);
+                document.body.classList.remove('pdf-exporting');
             });
         }
     </script>
-</body>
-
-</html>
-</script>
 </body>
 
 </html>
